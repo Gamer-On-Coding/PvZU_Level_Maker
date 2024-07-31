@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PvZU_Level_Maker
-build_property.ProjectDir = D:\Github Projects\PvZU_Level_Maker\PvZU_Level_Maker\
+build_property.ProjectDir = C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
