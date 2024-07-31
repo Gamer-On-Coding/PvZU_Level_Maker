@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PvZU_Level_Maker/1.0.0": {
+        "runtime": {
+          "PvZU_Level_Maker.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PvZU_Level_Maker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
