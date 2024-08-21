@@ -5,6 +5,7 @@
         public Color window = ColorTranslator.FromHtml("#272727");
         public World selected_world;
         public string selected_level;
+        public int suf_lvl;
         public string pathname;
 
         /// <summary>
@@ -34,62 +35,62 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            comboBox1 = new ComboBox();
+            worldSelect = new ComboBox();
             worldDeclareBindingSource = new BindingSource(components);
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
+            worldLabel = new Label();
+            levelLabel = new Label();
+            levelPrefix = new TextBox();
             button1 = new Button();
-            textBox2 = new TextBox();
-            label3 = new Label();
+            levelSuffix = new TextBox();
+            formattingLabel1 = new Label();
             ((System.ComponentModel.ISupportInitialize)worldDeclareBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // worldSelect
             // 
-            comboBox1.BackColor = Color.White;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 29);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(168, 23);
-            comboBox1.TabIndex = 1;
-            comboBox1.TabStop = false;
+            worldSelect.BackColor = Color.White;
+            worldSelect.DropDownStyle = ComboBoxStyle.DropDownList;
+            worldSelect.FormattingEnabled = true;
+            worldSelect.Location = new Point(12, 29);
+            worldSelect.Name = "worldSelect";
+            worldSelect.Size = new Size(168, 23);
+            worldSelect.TabIndex = 1;
+            worldSelect.TabStop = false;
             // 
             // worldDeclareBindingSource
             // 
             worldDeclareBindingSource.DataSource = typeof(Declare);
             // 
-            // label1
+            // worldLabel
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 2;
-            label1.Text = "World";
+            worldLabel.AutoSize = true;
+            worldLabel.ForeColor = Color.White;
+            worldLabel.Location = new Point(12, 6);
+            worldLabel.Name = "worldLabel";
+            worldLabel.Size = new Size(39, 15);
+            worldLabel.TabIndex = 2;
+            worldLabel.Text = "World";
             // 
-            // label2
+            // levelLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(207, 6);
-            label2.Name = "label2";
-            label2.Size = new Size(34, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Level";
+            levelLabel.AutoSize = true;
+            levelLabel.BackColor = Color.Transparent;
+            levelLabel.ForeColor = Color.White;
+            levelLabel.Location = new Point(207, 6);
+            levelLabel.Name = "levelLabel";
+            levelLabel.Size = new Size(34, 15);
+            levelLabel.TabIndex = 3;
+            levelLabel.Text = "Level";
             // 
-            // textBox1
+            // levelPrefix
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(207, 28);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(34, 23);
-            textBox1.TabIndex = 4;
-            textBox1.TextChanged += TextBox1_TextChanged;
+            levelPrefix.BackColor = Color.White;
+            levelPrefix.ForeColor = Color.Black;
+            levelPrefix.Location = new Point(207, 28);
+            levelPrefix.Name = "levelPrefix";
+            levelPrefix.Size = new Size(34, 23);
+            levelPrefix.TabIndex = 4;
+            levelPrefix.TextChanged += TextBox1_TextChanged;
             // 
             // button1
             // 
@@ -103,39 +104,39 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // textBox2
+            // levelSuffix
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(267, 28);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(34, 23);
-            textBox2.TabIndex = 6;
+            levelSuffix.BackColor = Color.White;
+            levelSuffix.ForeColor = Color.Black;
+            levelSuffix.Location = new Point(267, 28);
+            levelSuffix.Name = "levelSuffix";
+            levelSuffix.Size = new Size(34, 23);
+            levelSuffix.TabIndex = 6;
             // 
-            // label3
+            // formattingLabel1
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(249, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(12, 15);
-            label3.TabIndex = 7;
-            label3.Text = "-";
+            formattingLabel1.AutoSize = true;
+            formattingLabel1.BackColor = Color.Transparent;
+            formattingLabel1.ForeColor = Color.White;
+            formattingLabel1.Location = new Point(249, 33);
+            formattingLabel1.Name = "formattingLabel1";
+            formattingLabel1.Size = new Size(12, 15);
+            formattingLabel1.TabIndex = 7;
+            formattingLabel1.Text = "-";
             // 
             // LevelMaker
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 39, 39);
-            ClientSize = new Size(1433, 682);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
+            ClientSize = new Size(691, 485);
+            Controls.Add(formattingLabel1);
+            Controls.Add(levelSuffix);
             Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(levelPrefix);
+            Controls.Add(levelLabel);
+            Controls.Add(worldLabel);
+            Controls.Add(worldSelect);
             Name = "LevelMaker";
             Text = "Plants vs. Zombies: Universe Level Maker";
             Load += Form1_Load;
@@ -148,7 +149,7 @@
         {
             error = new Label();
 
-            comboBox1.Items.AddRange(worlds);
+            worldSelect.Items.AddRange(worlds);
 
             error.AutoSize = true;
             error.BackColor = Color.Transparent;
@@ -164,22 +165,23 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex > -1 && textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
+            if (worldSelect.SelectedIndex > -1 && levelPrefix.Text.Length > 0 && levelSuffix.Text.Length > 0)
             {
 
 
-                selected_world = (World)comboBox1.SelectedItem;
-                selected_level = textBox1.Text + " - " + textBox2.Text;
+                selected_world = (World)worldSelect.SelectedItem;
+                selected_level = levelPrefix.Text + " - " + levelSuffix.Text;
+                suf_lvl = Int32.Parse(levelSuffix.Text);
 
                 if (!Directory.Exists((@"levels/")))
                 {
                     Directory.CreateDirectory(@"levels/");
                 }
 
-                pathname = "levels/" + selected_world + "_" + selected_level + ".xml";
-                File.WriteAllText(pathname, "<LEVEL key=\"" + selected_world.world_id + selected_level + "\">\n</LEVEL>");
+                pathname = "levels/" + selected_world.world_id + suf_lvl + ".JSON";
+                Level level = new() { comment = selected_world.world_id + suf_lvl };
 
-                Program.AddLevelDefinition(pathname, selected_world);
+                Program.AddBasicLevelDefinition(pathname, selected_world, suf_lvl, level);
 
                 ComboBox comboBox2 = new ComboBox();
                 comboBox2.Items.AddRange(firstRewardTypes);
@@ -207,14 +209,14 @@
 
         #endregion
 
-        public ComboBox comboBox1;
+        public ComboBox worldSelect;
         public Label error;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
+        private Label worldLabel;
+        private Label levelLabel;
+        private TextBox levelPrefix;
         private BindingSource worldDeclareBindingSource;
         private Button button1;
-        private TextBox textBox2;
-        private Label label3;
+        private TextBox levelSuffix;
+        private Label formattingLabel1;
     }
 }

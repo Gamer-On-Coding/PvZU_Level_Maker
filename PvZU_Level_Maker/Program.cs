@@ -1,4 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Security.AccessControl;
 using System.Xml;
 
 namespace PvZU_Level_Maker
@@ -17,57 +19,46 @@ namespace PvZU_Level_Maker
             Application.Run(new LevelMaker());
         }
 
-        public static void AddLevelDefinition(string pathname, World world)
+        public static void AddBasicLevelDefinition(string pathname, World world, int levelNumber, Level level)
         {
-            XmlDocument doc = new();
-            doc.Load(pathname);
+            LevelDefinition definition = new()
+            {
+                description = world.world_description,
+                levelNumber = levelNumber,
+            };
 
-            XmlNode root = doc.SelectSingleNode("LEVEL");
+            GameObject LevelDefinition = new()
+            {
+                objclass = "LevelDefinition",
+                objdata = definition
+            };
 
-            XmlElement level_definition = doc.CreateElement("LevelDefinition");
+            level.objects.Add(LevelDefinition);
 
-            XmlElement description = doc.CreateElement("Description");
-            description.InnerText = "[PLAYERS_TRIP_TO]";
-            level_definition.AppendChild(description);
+            string json = JsonConvert.SerializeObject(level);
+            
+            try
+            {
+                json = JToken.Parse(json).ToString(Newtonsoft.Json.Formatting.Indented);
+            }
+            catch
+            {
+            }
 
-            XmlElement world_num = doc.CreateElement("WorldNum");
-            world_num.InnerText = world.world_num.ToString();
-            level_definition.AppendChild(world_num);
+            File.WriteAllText(pathname, json);
+        }
+/*
+        public static void LoadLevel()
+        {
 
-            XmlElement level_name = doc.CreateElement("Name");
-            level_name.InnerText = "[LEVEL_NAME]";
-            level_definition.AppendChild(level_name);
-
-
-            root.AppendChild(level_definition);
-
-            doc.Save(pathname);
         }
 
         public static void AddSeedBank(string pathname)
         {
-            XmlDocument doc = new();
-            doc.Load(pathname);
-
-            XmlNode root = doc.SelectSingleNode("LEVEL");
-
-            XmlElement seed_bank = doc.CreateElement("SeedBank");
-            root.AppendChild(seed_bank);
-
-            doc.Save(pathname);
         }
 
         public static void AddSeedsBank(string pathname)
         {
-            XmlDocument doc = new();
-            doc.Load(pathname);
-
-            XmlNode root = doc.SelectSingleNode("LEVEL");
-
-            XmlElement seeds_bank = doc.CreateElement("SeedsBank");
-            root.AppendChild(seeds_bank);
-
-            doc.Save(pathname);
         }
 
         public static void AddFirstReward(string pathname)
@@ -113,5 +104,6 @@ namespace PvZU_Level_Maker
 
             doc.Save(pathname);
         }
+*/
     }
 }
