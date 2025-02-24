@@ -1,4 +1,7 @@
-﻿namespace PvZU_Level_Maker
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace PvZU_Level_Maker
 {
     partial class Container
     {

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Container.cs">
+    <Compile Update="PvZU_Level_Maker\Container.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Editor.cs">
+    <Compile Update="PvZU_Level_Maker\Editor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LevelMaker.cs">
+    <Compile Update="PvZU_Level_Maker\LevelMaker.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

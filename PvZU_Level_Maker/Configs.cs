@@ -1,4 +1,6 @@
-﻿namespace PvZU_Level_Maker
+﻿using System.Collections.Generic;
+
+namespace PvZU_Level_Maker
 {
     public class Plant
     {

@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.8.34408.163
+VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PvZU_Level_Maker", "PvZU_Level_Maker\PvZU_Level_Maker.csproj", "{E853401D-5047-403C-85A0-D33F7A392303}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1604D647-2C57-4311-BC4A-BBCC3D217421}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PvZU_Level_Maker", "PvZU_Level_Maker.csproj", "{918800FB-1920-4869-8A90-F3C8A9C0B8D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E853401D-5047-403C-85A0-D33F7A392303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E853401D-5047-403C-85A0-D33F7A392303}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E853401D-5047-403C-85A0-D33F7A392303}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E853401D-5047-403C-85A0-D33F7A392303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918800FB-1920-4869-8A90-F3C8A9C0B8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918800FB-1920-4869-8A90-F3C8A9C0B8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918800FB-1920-4869-8A90-F3C8A9C0B8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918800FB-1920-4869-8A90-F3C8A9C0B8D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9A423717-665E-4663-9768-102B75BDBBCA}
+		SolutionGuid = {DF74D8C9-8BC3-46D4-878D-F585917A76EB}
 	EndGlobalSection
 EndGlobal

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rohan\\source\\repos\\Percentile Calculator\\PvZU_Level_Maker\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj": {}
+    "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rohan\\source\\repos\\Percentile Calculator\\PvZU_Level_Maker\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj": {
+    "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rohan\\source\\repos\\Percentile Calculator\\PvZU_Level_Maker\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj",
+        "projectUniqueName": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj",
         "projectName": "PvZU_Level_Maker",
-        "projectPath": "C:\\Users\\rohan\\source\\repos\\Percentile Calculator\\PvZU_Level_Maker\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj",
+        "projectPath": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker.csproj",
         "packagesPath": "C:\\Users\\rohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rohan\\source\\repos\\Percentile Calculator\\PvZU_Level_Maker\\PvZU_Level_Maker\\obj\\",
+        "outputPath": "D:\\Projects\\PvZU_Level_Maker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
