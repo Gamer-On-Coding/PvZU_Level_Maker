@@ -1,10 +1,13 @@
-﻿namespace PvZU_Level_Maker
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace PvZU_Level_Maker
 {
     partial class LevelMaker
     {
         public Color window = ColorTranslator.FromHtml("#272727");
-        public World selected_world;
-        public string selected_level;
+        public static World selected_world;
+        public static string selected_level;
         public int suf_lvl;
         public string pathname;
 
@@ -26,6 +29,18 @@
             base.Dispose(disposing);
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (string.Equals((sender as Button).Name, @"button1"))
+            {
+
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -34,6 +49,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             components = new System.ComponentModel.Container();
             worldSelect = new ComboBox();
             worldDeclareBindingSource = new BindingSource(components);
@@ -129,7 +145,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 39, 39);
-            ClientSize = new Size(691, 485);
+            ClientSize = new Size(452, 73);
             Controls.Add(formattingLabel1);
             Controls.Add(levelSuffix);
             Controls.Add(button1);
@@ -138,6 +154,7 @@
             Controls.Add(worldLabel);
             Controls.Add(worldSelect);
             Name = "LevelMaker";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Plants vs. Zombies: Universe Level Maker";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)worldDeclareBindingSource).EndInit();
@@ -147,6 +164,8 @@
 
         private void InitializeMore()
         {
+            modules = modules.OrderBy(x => x.module_name).ToArray();
+
             error = new Label();
 
             worldSelect.Items.AddRange(worlds);
@@ -165,6 +184,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Level level = Program.level;
             if (worldSelect.SelectedIndex > -1 && levelPrefix.Text.Length > 0 && levelSuffix.Text.Length > 0)
             {
 
@@ -173,29 +193,29 @@
                 selected_level = levelPrefix.Text + " - " + levelSuffix.Text;
                 suf_lvl = Int32.Parse(levelSuffix.Text);
 
-                if (!Directory.Exists((@"levels/")))
+                if (!Directory.Exists(@"levels/"))
                 {
                     Directory.CreateDirectory(@"levels/");
                 }
 
-                pathname = "levels/" + selected_world.world_id + suf_lvl + ".JSON";
-                Level level = new() { comment = selected_world.world_id + suf_lvl };
+                Program.pathname = pathname = "levels/" + selected_world.world_id + suf_lvl + ".JSON";
 
-                Program.AddBasicLevelDefinition(pathname, selected_world, suf_lvl, level);
+                if (Directory.Exists(pathname))
+                {
+                    level = Program.LoadLevel(pathname);
+                }
+                else
+                {
+                    level.comment = selected_world.world_id + suf_lvl;
+                }
 
-                ComboBox comboBox2 = new ComboBox();
-                comboBox2.Items.AddRange(firstRewardTypes);
-                comboBox2.BackColor = Color.White;
-                comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBox2.FormattingEnabled = true;
-                comboBox2.Location = new Point(12, 79);
-                comboBox2.Name = "FirstRewardTypes";
-                comboBox2.Size = new Size(168, 23);
-                comboBox2.TabIndex = 8;
-                comboBox2.TabStop = false;
+                Program.ReadConfigs();
+                Program.AddBasicLevelDefinition(selected_world, suf_lvl, Program.level);
 
-                error.ForeColor = window;
-                error.Text = "";
+                Editor form = new Editor();
+                form.Show();
+
+                this.Close();
             }
             else
             {

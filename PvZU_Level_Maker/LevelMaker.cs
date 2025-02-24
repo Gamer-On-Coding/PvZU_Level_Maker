@@ -7,6 +7,11 @@ namespace PvZU_Level_Maker
 
         public static readonly World[] worlds = [Declare.EM, Declare.AE, Declare.PS, Declare.WW, Declare.KW];
         public static readonly FirstReward[] firstRewardTypes = [];
+        public static Module[] modules = [Declare.DefaultSunDropper, Declare.FastSunDropper, Declare.VeryFastSunDropper, Declare.SlowSunDropper,
+            Declare.VerySlowSunDropper, Declare.MausoleumLane, Declare.TutorialMowers, Declare.ModernMowers, Declare.MausoleumMowers, 
+            Declare.DefaultZombieWinCondition, Declare.ZombiesDeadWinCon, Declare.WaveManagerProps, Declare.StandardIntro, Declare.SeedBank];
+        public static readonly StageModule[] stageModules = [ Declare.ModernStage, Declare.MausoleumStage];
+        public static readonly string[] RewardTypes = ["Plant"];
 
         public LevelMaker()
         {

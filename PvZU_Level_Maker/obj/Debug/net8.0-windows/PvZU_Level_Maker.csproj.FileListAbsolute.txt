@@ -38,3 +38,8 @@ C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Ma
 C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.csproj.AssemblyReference.cache
 C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Lev.5584D8BD.Up2Date
+C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.Editor.resources
+C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.Container.resources
+C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\bin\Debug\net8.0-windows\System.Management.dll
+C:\Users\rohan\source\repos\Percentile Calculator\PvZU_Level_Maker\PvZU_Level_Maker\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll

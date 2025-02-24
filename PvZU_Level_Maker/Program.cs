@@ -1,25 +1,30 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Security.AccessControl;
-using System.Xml;
 
 namespace PvZU_Level_Maker
 {
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        ///  The main entry point 
+        public static Level level = new();
+        public static string pathname;
+
+        public static List<Plant> plants = [];
+        public static List<ZombieObj> zombies = [];
+
         [STAThread]
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new LevelMaker());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Container TheForm = new();
+            Application.Run();
         }
 
-        public static void AddBasicLevelDefinition(string pathname, World world, int levelNumber, Level level)
+        public static void AddBasicLevelDefinition(World world, int levelNumber, Level level)
         {
             LevelDefinition definition = new()
             {
@@ -35,8 +40,13 @@ namespace PvZU_Level_Maker
 
             level.objects.Add(LevelDefinition);
 
+            WriteToFile(pathname);
+        }
+
+        public static void WriteToFile(string pathname)
+        {
             string json = JsonConvert.SerializeObject(level);
-            
+
             try
             {
                 json = JToken.Parse(json).ToString(Newtonsoft.Json.Formatting.Indented);
@@ -47,63 +57,22 @@ namespace PvZU_Level_Maker
 
             File.WriteAllText(pathname, json);
         }
-/*
-        public static void LoadLevel()
+
+        public static void ReadConfigs()
         {
+            string plantstring = File.ReadAllText("Configs/PLANTCONFIG.json");
+            string zombiestring = File.ReadAllText("Configs/ZOMBIECONFIG.json");
 
+            plants = JsonConvert.DeserializeObject<PlantConfig>(plantstring).objects;
+
+            zombies = JsonConvert.DeserializeObject<ZombieConfig>(zombiestring).objects;
         }
-
-        public static void AddSeedBank(string pathname)
+        public static Level LoadLevel(string pathname)
         {
+            string levelstring = File.ReadAllText(pathname);
+
+            level = JsonConvert.DeserializeObject<Level>(levelstring);
+            return level;
         }
-
-        public static void AddSeedsBank(string pathname)
-        {
-        }
-
-        public static void AddFirstReward(string pathname)
-        {
-            XmlDocument doc = new();
-            doc.Load(pathname);
-
-            XmlNode root = doc.SelectSingleNode("LEVEL");
-
-            XmlElement FirstRewardType = doc.CreateElement("FirstRewardType");
-            FirstRewardType.InnerText = "";
-            root.AppendChild(FirstRewardType);
-
-            XmlElement FirstRewardParam = doc.CreateElement("FirstRewardParam");
-            FirstRewardParam.InnerText = "";
-            root.AppendChild(FirstRewardParam);
-
-            doc.Save(pathname);
-        }
-
-        public static void SetZombiePool(string pathname)
-        {
-            XmlDocument doc = new();
-            doc.Load(pathname);
-
-            XmlNode root = doc.SelectSingleNode("LEVEL");
-
-            XmlElement ZombiePool = doc.CreateElement("ZombiePool");
-            root.AppendChild(ZombiePool);
-
-            doc.Save(pathname);
-        }
-
-        public static void AddWaves(string pathname)
-        {
-            XmlDocument doc = new();
-            doc.Load(pathname);
-
-            XmlNode root = doc.SelectSingleNode("LEVEL");
-
-            XmlElement waves = doc.CreateElement("Waves");
-            root.AppendChild(waves);
-
-            doc.Save(pathname);
-        }
-*/
     }
 }

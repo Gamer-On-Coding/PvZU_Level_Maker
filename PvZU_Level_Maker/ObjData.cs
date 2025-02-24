@@ -8,7 +8,6 @@ namespace PvZU_Level_Maker
 {
     public abstract class ObjData
     {
-        public List<string> aliases = [];
     }
 
     public class LevelDefinition : ObjData
