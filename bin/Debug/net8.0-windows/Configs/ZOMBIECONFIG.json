@@ -1,0 +1,190 @@
+{
+    "objects":[
+        {
+            "aliases": "tutorial",
+            "object": "obj_basiczombie",
+            "sprite": "BasicZombie",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "tutorial_armor1",
+            "object": "obj_coneheadzombie",
+            "sprite": "ConeheadZombie",
+            "parent": "BasicZombie",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 270,
+                "armordividing": [240,110],
+                "armortype": 1,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "tutorial_armor2",
+            "object": "obj_bucketheadzombie",
+            "sprite": "BucketheadZombie",
+            "parent": "BasicZombie",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 1100,
+                "armordividing": [750,400],
+                "armortype": 2,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "mummy",
+            "object": "obj_mummyzombie",
+            "sprite": "MummyZombie",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "mummy_armor1",
+            "object": "obj_coneheadmummy",
+            "sprite": "ConeheadMummy",
+            "parent": "MummyZombie",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 270,
+                "armordividing": [240,110],
+                "armortype": 1,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "mummy_armor2",
+            "object": "obj_bucketheadmummy",
+            "sprite": "BucketheadMummy",
+            "parent": "MummyZombie",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 1100,
+                "armordividing": [750,400],
+                "armortype": 2,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "mummy_armor4",
+            "object": "obj_pyramidheadmummy",
+            "sprite": "PyramidHeadMummy",
+            "parent": "MummyZombie",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 2200,
+                "armordividing": [1450,700],
+                "armortype": 2,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "mummy_flag",
+            "object": "obj_flagmummy",
+            "sprite": "Flag_Mummy",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "sergeant",
+            "object": "obj_sergeantzombie",
+            "sprite": "SergeantZombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "sergeant_armor1",
+            "object": "obj_coneheadsergeant",
+            "sprite": "ConeheadSergeant",
+            "parent": "SergeantZombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 270,
+                "armordividing": [240,110],
+                "armortype": 1,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "sergeant_armor2",
+            "object": "obj_bucketheadsergeant",
+            "sprite": "BucketheadSergeant",
+            "parent": "SergeantZombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 1100,
+                "armordividing": [750,400],
+                "armortype": 2,
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "sergeant_flag",
+            "object": "obj_flagsergeantzombie",
+            "sprite": "FlagSergeantZombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "cavalry",
+            "object": "obj_cavalryzombie",
+            "sprite": "CavalryZombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "speed": 0.185
+            }
+        },
+        {
+            "aliases": "shield",
+            "object": "obj_shield",
+            "sprite": "shield",
+            "parent": "shieldzombie",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 190,
+                "healthdividing": [100],
+                "armor": 2200,
+                "armordividing": [1500,800],
+                "armortype": 2,
+                "speed": 0.185
+            }
+        }
+    ]
+}

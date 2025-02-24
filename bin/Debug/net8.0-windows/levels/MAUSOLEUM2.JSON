@@ -1,0 +1,23 @@
+{
+  "#comment": "MAUSOLEUM2",
+  "objects": [
+    {
+      "aliases": null,
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
+        "firstIntroNarrative": null,
+        "firstRewardParam": null,
+        "firstRewardType": null,
+        "levelNumber": 2,
+        "loot": null,
+        "modules": null,
+        "name": null,
+        "normalPresentTable": null,
+        "shinyPresentTable": null,
+        "stageModule": null
+      }
+    }
+  ],
+  "version": 1
+}
