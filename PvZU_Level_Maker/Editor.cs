@@ -42,7 +42,7 @@ namespace PvZU_Level_Maker
         {
             if (IsValid())
             {
-                //List<GameObject> Objects = Program.level.objects;
+                List<GameObject> Objects = Program.level.objects;
                 LevelDefinition levelDefinition = (LevelDefinition)Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata;
 
                 List<Module> modules = checkedListBox1.CheckedItems.Cast<Module>().ToList();
