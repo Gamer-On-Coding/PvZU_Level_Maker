@@ -39,6 +39,10 @@ namespace PvZU_Level_Maker
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            numericUpDown1 = new NumericUpDown();
+            label6 = new Label();
+            comboBox3 = new ComboBox();
+            label5 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
             comboBox2 = new ComboBox();
@@ -49,10 +53,9 @@ namespace PvZU_Level_Maker
             label1 = new Label();
             tabPage2 = new TabPage();
             button1 = new Button();
-            label5 = new Label();
-            comboBox3 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -69,6 +72,8 @@ namespace PvZU_Level_Maker
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(numericUpDown1);
+            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(comboBox3);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(textBox1);
@@ -86,6 +91,43 @@ namespace PvZU_Level_Maker
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Level Definition";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(288, 197);
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(176, 23);
+            numericUpDown1.TabIndex = 13;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(288, 179);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 15);
+            label6.TabIndex = 11;
+            label6.Text = "Coins";
+            label6.Click += label6_Click;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(288, 153);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(176, 23);
+            comboBox3.TabIndex = 10;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(288, 135);
+            label5.Name = "label5";
+            label5.Size = new Size(31, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Loot";
             // 
             // textBox1
             // 
@@ -144,7 +186,7 @@ namespace PvZU_Level_Maker
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(6, 21);
+            checkedListBox1.Location = new Point(6, 22);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(262, 364);
             checkedListBox1.TabIndex = 1;
@@ -179,24 +221,6 @@ namespace PvZU_Level_Maker
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(288, 135);
-            label5.Name = "label5";
-            label5.Size = new Size(31, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Loot";
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(288, 153);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(176, 23);
-            comboBox3.TabIndex = 10;
-            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
-            // 
             // Editor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -212,6 +236,7 @@ namespace PvZU_Level_Maker
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -220,6 +245,7 @@ namespace PvZU_Level_Maker
             checkedListBox1.Items.AddRange(LevelMaker.modules);
             comboBox1.Items.AddRange(LevelMaker.stageModules);
             comboBox2.Items.AddRange(LevelMaker.rewardTypes);
+            comboBox3.Items.AddRange(LevelMaker.loot);
         }
 
         #endregion
@@ -238,5 +264,7 @@ namespace PvZU_Level_Maker
         private TextBox textBox1;
         private ComboBox comboBox3;
         private Label label5;
+        private Label label6;
+        private NumericUpDown numericUpDown1;
     }
 }

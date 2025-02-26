@@ -8,6 +8,9 @@ namespace PvZU_Level_Maker
 
     public class LevelDefinition : ObjData
     {
+        [JsonProperty("CurrencyAmount")]
+        public int currencyAmount { get; set; }
+
         [JsonProperty("Description")]
         public string description { get; set; }
 

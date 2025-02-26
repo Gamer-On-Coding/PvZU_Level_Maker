@@ -38,7 +38,18 @@ namespace PvZU_Level_Maker
     }
     #endregion
 
+    #region loot
+    public class Loot
+    {
+        public string LootName;
+        public string LootID;
 
+        public override string ToString()
+        {
+            return LootName;
+        }
+    }
+    #endregion
 
     #region json structure
     public class Level

@@ -44,5 +44,11 @@
         public static readonly RewardType Plant = new() { typeName = "Plant", typeID = "unlock_plant" };
         public static readonly RewardType Collectable = new() { typeName = "Collectable", typeID = "collectable" };
         #endregion
+
+        #region Loot Decleration
+        public static readonly Loot defaultLoot = new() { LootID = "RTID(DefaultLoot@LevelModules", LootName = "Default" };
+        public static readonly Loot noLoot = new() { LootID = "NoLoot@LevelModules", LootName = "No Loot" };
+        public static readonly Loot dangerRoomLoot = new() { LootID = "", LootName = "Danger Room" };
+        #endregion
     }
 }

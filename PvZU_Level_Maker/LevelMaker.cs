@@ -10,6 +10,7 @@ namespace PvZU_Level_Maker
         public static Module[] modules = [Declare.DefaultSunDropper, Declare.FastSunDropper, Declare.VeryFastSunDropper, Declare.SlowSunDropper,
             Declare.VerySlowSunDropper, Declare.MausoleumLane, Declare.TutorialMowers, Declare.ModernMowers, Declare.MausoleumMowers, 
             Declare.DefaultZombieWinCondition, Declare.ZombiesDeadWinCon, Declare.WaveManagerProps, Declare.StandardIntro, Declare.SeedBank];
+        internal static Loot[] loot = [ Declare.dangerRoomLoot, Declare.defaultLoot, Declare.noLoot];
         public static readonly StageModule[] stageModules = [ Declare.MausoleumStage, Declare.ModernStage];
         public static readonly RewardType[] rewardTypes = [Declare.Collectable, Declare.Plant];
 

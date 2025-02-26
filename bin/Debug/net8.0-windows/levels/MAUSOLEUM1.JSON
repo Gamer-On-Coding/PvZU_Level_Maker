@@ -5,15 +5,7 @@
       "objclass": "LevelDefinition",
       "objdata": {
         "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
-        "FirstRewardParam": "taco",
-        "FirstRewardType": "collectable",
-        "LevelNumber": 1,
-        "Modules": [
-          "RTID(DefaultZombieWinCondition@LevelModules)",
-          "RTID(MausoleumLane@CurrentLevel)",
-          "RTID(ModernMowers@LevelModules)"
-        ],
-        "StageModule": "RTID((MausoleumStage@LevelModules)"
+        "LevelNumber": 1
       }
     }
   ],
