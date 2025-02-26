@@ -49,18 +49,28 @@ namespace PvZU_Level_Maker
 
         public static void WriteToFile(string pathname)
         {
-            string json = JsonConvert.SerializeObject(level);
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore // Removes all null values
+            };
 
+            // Serialize while ignoring null values
+            string json = JsonConvert.SerializeObject(level, settings);
+
+            // Format JSON to be more readable
             try
             {
                 json = JToken.Parse(json).ToString(Newtonsoft.Json.Formatting.Indented);
             }
             catch
             {
+                // Optional: Handle formatting errors if needed
             }
 
+            // Write JSON to file
             File.WriteAllText(pathname, json);
         }
+
 
         public static void ReadConfigs()
         {

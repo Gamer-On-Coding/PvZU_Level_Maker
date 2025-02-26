@@ -13,21 +13,32 @@ using System.Xml.Linq;
 namespace PvZU_Level_Maker
 {
     #region firstreward
-    public abstract class FirstReward
+    public class FirstReward
     {
-        public required string reward_name;
-        public required string reward_id;
+        public RewardType rewardType;
+        public string reward;
 
-        public override string ToString() => reward_name;
+        public static implicit operator string(FirstReward v)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 
-    public class PlantUnlock : FirstReward
+    public class RewardType
     {
-        public required string unlockID = "Plant";
-        public required Plant plant { get; set; }
-    }
+        public string typeName;
+        public string typeID;
 
+        public override string ToString()
+        {
+            return typeName;
+        }
+    }
     #endregion
+
+
 
     #region json structure
     public class Level
@@ -46,32 +57,32 @@ namespace PvZU_Level_Maker
     }
     public class LaneGrid
     {
-        [JsonPropertyName("X")]
+        [JsonProperty("X")]
         public int x { get; set; }
 
-        [JsonPropertyName("Y")]
+        [JsonProperty("Y")]
         public int y { get; set; }
     }
     public class DynamicZombie
     {
-        [JsonPropertyName("PointIncrementPerWave")]
+        [JsonProperty("PointIncrementPerWave")]
         public int pointIncrementPerWave { get; set; }
 
-        [JsonPropertyName("StartingPoints")]
+        [JsonProperty("StartingPoints")]
         public int startingPoints { get; set; }
 
-        [JsonPropertyName("StartingWave")]
+        [JsonProperty("StartingWave")]
         public int startingWave { get; set; }
 
-        [JsonPropertyName("ZombiePool")]
+        [JsonProperty("ZombiePool")]
         public List<string> zombiePool { get; set; }
     }
     public class Zombie
     {
-        [JsonPropertyName("Row")]
+        [JsonProperty("Row")]
         public string row { get; set; }
 
-        [JsonPropertyName("Type")]
+        [JsonProperty("Type")]
         public string type { get; set; }
     }
     #endregion

@@ -2,20 +2,18 @@
   "#comment": "MAUSOLEUM1",
   "objects": [
     {
-      "aliases": null,
       "objclass": "LevelDefinition",
       "objdata": {
-        "description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
-        "firstIntroNarrative": null,
-        "firstRewardParam": null,
-        "firstRewardType": null,
-        "levelNumber": 1,
-        "loot": null,
-        "modules": null,
-        "name": null,
-        "normalPresentTable": null,
-        "shinyPresentTable": null,
-        "stageModule": null
+        "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
+        "FirstRewardParam": "taco",
+        "FirstRewardType": "collectable",
+        "LevelNumber": 1,
+        "Modules": [
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(MausoleumLane@CurrentLevel)",
+          "RTID(ModernMowers@LevelModules)"
+        ],
+        "StageModule": "RTID((MausoleumStage@LevelModules)"
       }
     }
   ],

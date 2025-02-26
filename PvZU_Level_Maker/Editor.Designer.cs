@@ -39,6 +39,8 @@ namespace PvZU_Level_Maker
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            textBox1 = new TextBox();
+            label4 = new Label();
             comboBox2 = new ComboBox();
             label3 = new Label();
             label2 = new Label();
@@ -47,8 +49,8 @@ namespace PvZU_Level_Maker
             label1 = new Label();
             tabPage2 = new TabPage();
             button1 = new Button();
+            label5 = new Label();
             comboBox3 = new ComboBox();
-            label4 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
@@ -67,8 +69,10 @@ namespace PvZU_Level_Maker
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(comboBox3);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(comboBox2);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
@@ -83,19 +87,37 @@ namespace PvZU_Level_Maker
             tabPage1.Text = "Level Definition";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(288, 109);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(176, 23);
+            textBox1.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(288, 91);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Reward";
+            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(189, 65);
+            comboBox2.Location = new Point(288, 65);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(153, 23);
+            comboBox2.Size = new Size(176, 23);
             comboBox2.TabIndex = 5;
             comboBox2.Text = "(select first reward type)";
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(189, 47);
+            label3.Location = new Point(288, 47);
             label3.Name = "label3";
             label3.Size = new Size(98, 15);
             label3.TabIndex = 4;
@@ -104,7 +126,7 @@ namespace PvZU_Level_Maker
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(189, 3);
+            label2.Location = new Point(288, 3);
             label2.Name = "label2";
             label2.Size = new Size(85, 15);
             label2.TabIndex = 3;
@@ -113,9 +135,9 @@ namespace PvZU_Level_Maker
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(189, 21);
+            comboBox1.Location = new Point(288, 21);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(153, 23);
+            comboBox1.Size = new Size(176, 23);
             comboBox1.TabIndex = 2;
             comboBox1.Text = "(select stage module)";
             // 
@@ -124,7 +146,7 @@ namespace PvZU_Level_Maker
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(6, 21);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(177, 364);
+            checkedListBox1.Size = new Size(262, 364);
             checkedListBox1.TabIndex = 1;
             // 
             // label1
@@ -157,23 +179,23 @@ namespace PvZU_Level_Maker
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(288, 135);
+            label5.Name = "label5";
+            label5.Size = new Size(31, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Loot";
+            // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(189, 114);
+            comboBox3.Location = new Point(288, 153);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(153, 23);
-            comboBox3.TabIndex = 6;
-            comboBox3.Text = "(select reward)";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(189, 91);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Reward";
+            comboBox3.Size = new Size(176, 23);
+            comboBox3.TabIndex = 10;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // Editor
             // 
@@ -197,6 +219,7 @@ namespace PvZU_Level_Maker
         {
             checkedListBox1.Items.AddRange(LevelMaker.modules);
             comboBox1.Items.AddRange(LevelMaker.stageModules);
+            comboBox2.Items.AddRange(LevelMaker.rewardTypes);
         }
 
         #endregion
@@ -212,6 +235,8 @@ namespace PvZU_Level_Maker
         private Label label3;
         private ComboBox comboBox2;
         private Label label4;
+        private TextBox textBox1;
         private ComboBox comboBox3;
+        private Label label5;
     }
 }

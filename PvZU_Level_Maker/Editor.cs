@@ -40,31 +40,39 @@ namespace PvZU_Level_Maker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //List<GameObject> Objects = Program.level.objects;
-                LevelDefinition levelDefinition = (LevelDefinition)Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata;
+            //List<GameObject> Objects = Program.level.objects;
+            LevelDefinition levelDefinition = (LevelDefinition)Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata;
 
-                List<Module> modules = checkedListBox1.CheckedItems.Cast<Module>().ToList();
-                string stageModule = LevelMaker.stageModules[comboBox1.SelectedIndex].id;
+            List<Module> modules = checkedListBox1.CheckedItems.Cast<Module>().ToList();
+            string stageModule = LevelMaker.stageModules[comboBox1.SelectedIndex].id;
+            FirstReward firstReward = new() { rewardType = LevelMaker.rewardTypes[comboBox2.SelectedIndex], reward = textBox1.Text };
 
-                levelDefinition.modules = (List<string>)modules.ToID();
-                levelDefinition.stageModule = stageModule;
+            levelDefinition.modules = (List<string>)modules.ToID();
+            levelDefinition.stageModule = stageModule;
+            levelDefinition.firstRewardParam = firstReward.reward.ToLower();
+            levelDefinition.firstRewardType = firstReward.rewardType.typeID;
 
-                Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata = levelDefinition;
+            Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata = levelDefinition;
 
-                Program.WriteToFile(Program.pathname);
-                //Saved
-            }
-            catch
-            {
-                throw CouldntSave();
-            }
+            Program.WriteToFile(Program.pathname);
+            //Saved
         }
+
+
 
         public Exception CouldntSave()
         {
             throw new NotImplementedException();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Enabled = comboBox2.SelectedIndex != -1;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

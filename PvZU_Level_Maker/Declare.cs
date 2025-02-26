@@ -11,10 +11,6 @@
         public static readonly World KW = new() { world_name = "Kong-Fu World", world_id = "" };
         #endregion
 
-        #region PlantUnlock
-        //Types of First Time Defeat Rewards
-        #endregion
-
         #region Module Decleration
         //Intros
         public static readonly Module StandardIntro = new() { module_name = "Standard Intro", module_id = "RTID(StandardIntro@LevelModules)" };
@@ -42,6 +38,11 @@
         #region Stage Module Decleration
         public static readonly StageModule ModernStage = new() { name = "Modern Stage", id = "RTID(ModernStage@LevelModules)" };
         public static readonly StageModule MausoleumStage = new() { name = "Mausoleum Stage", id = "RTID((MausoleumStage@LevelModules)" };
+        #endregion
+
+        #region First Reward Type Declaration
+        public static readonly RewardType Plant = new() { typeName = "Plant", typeID = "unlock_plant" };
+        public static readonly RewardType Collectable = new() { typeName = "Collectable", typeID = "collectable" };
         #endregion
     }
 }

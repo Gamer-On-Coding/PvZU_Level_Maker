@@ -1,8 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace PvZU_Level_Maker
 {
@@ -12,103 +8,103 @@ namespace PvZU_Level_Maker
 
     public class LevelDefinition : ObjData
     {
-        [JsonPropertyName("Description")]
+        [JsonProperty("Description")]
         public string description { get; set; }
 
-        [JsonPropertyName("FirstIntroNarrative")]
+        [JsonProperty("FirstIntroNarrative")]
         public string firstIntroNarrative { get; set; }
 
-        [JsonPropertyName("FirstRewardParam")]
+        [JsonProperty("FirstRewardParam")]
         public string firstRewardParam { get; set; }
 
-        [JsonPropertyName("FirstRewardType")]
+        [JsonProperty("FirstRewardType")]
         public string firstRewardType { get; set; }
 
-        [JsonPropertyName("LevelNumber")]
+        [JsonProperty("LevelNumber")]
         public int levelNumber { get; set; }
 
-        [JsonPropertyName("Loot")]
+        [JsonProperty("Loot")]
         public string loot { get; set; }
 
-        [JsonPropertyName("Modules")]
+        [JsonProperty("Modules")]
         public List<string> modules { get; set; }
 
-        [JsonPropertyName("Name")]
+        [JsonProperty("Name")]
         public string name { get; set; }
 
-        [JsonPropertyName("NormalPresentTable")]
+        [JsonProperty("NormalPresentTable")]
         public string normalPresentTable { get; set; }
 
-        [JsonPropertyName("ShinyPresentTable")]
+        [JsonProperty("ShinyPresentTable")]
         public string shinyPresentTable { get; set; }
 
-        [JsonPropertyName("StageModule")]
+        [JsonProperty("StageModule")]
         public string stageModule { get; set; }
     }
 
     public class MausoleumLaneProperties : ObjData
     {
-        [JsonPropertyName("LaneGrids")]
+        [JsonProperty("LaneGrids")]
         public List<LaneGrid> laneGrids { get; set; }
     }
 
     public class SeedBankProperties : ObjData
     {
-        [JsonPropertyName("SelectionMethod")]
+        [JsonProperty("SelectionMethod")]
         public string selectionMethod { get; set; }
     }
 
     public class WaveManagerModuleProperties : ObjData
     {
-        [JsonPropertyName("DynamicZombies")]
+        [JsonProperty("DynamicZombies")]
         public List<DynamicZombie> dynamicZombies { get; set; }
 
-        [JsonPropertyName("WaveManagerProps")]
+        [JsonProperty("WaveManagerProps")]
         public string waveManagerProps { get; set; }
     }
 
     public class WaveManagerProperties : ObjData
     {
-        [JsonPropertyName("FlagWaveInterval")]
+        [JsonProperty("FlagWaveInterval")]
         public int flagWaveInterval { get; set; }
 
-        [JsonPropertyName("WaveCount")]
+        [JsonProperty("WaveCount")]
         public int waveCount { get; set; }
 
-        [JsonPropertyName("WaveSpendingPointIncrement")]
+        [JsonProperty("WaveSpendingPointIncrement")]
         public int waveSpendingPointIncrement { get; set; }
 
-        [JsonPropertyName("WaveSpendingPoints")]
+        [JsonProperty("WaveSpendingPoints")]
         public int waveSpendingPoints { get; set; }
 
-        [JsonPropertyName("Waves")]
+        [JsonProperty("Waves")]
         public List<List<string>> waves { get; set; }
     }
 
     public class SpawnZombiesJitteredWaveActionProps : ObjData
     {
-        [JsonPropertyName("AdditionalPlantfood")]
+        [JsonProperty("AdditionalPlantfood")]
         public int additionalPlantfood { get; set; }
 
-        [JsonPropertyName("Zombies")]
+        [JsonProperty("Zombies")]
         public List<Zombie> zombies { get; set; }
     }
 
     public class SpawnModernPortalsWaveActionProps : ObjData
     {
-        [JsonPropertyName("PortalColumn")]
+        [JsonProperty("PortalColumn")]
         public int portalColumn { get; set; }
 
-        [JsonPropertyName("PortalRow")]
+        [JsonProperty("PortalRow")]
         public int portalRow { get; set; }
 
-        [JsonPropertyName("PortalType")]
+        [JsonProperty("PortalType")]
         public string portalType { get; set; }
 
-        [JsonPropertyName("SpawnEffectAnimID")]
+        [JsonProperty("SpawnEffectAnimID")]
         public string spawnEffectAnimID { get; set; }
 
-        [JsonPropertyName("SpawnSoundID")]
+        [JsonProperty("SpawnSoundID")]
         public string spawnSoundID { get; set; }
     }
 }
