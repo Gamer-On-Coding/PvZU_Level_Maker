@@ -1,38 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\PvZU_Level_Maker\\",
+  "WorkspaceRootPath": "D:\\Github Projects\\PvZU_Level_Maker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|D:\\Projects\\PvZU_Level_Maker\\pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\levels\\universe\\a.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\levels\\universe\\a.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\levels\\universe\\d.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\levels\\universe\\d.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\editor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\editor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\levels\\universe\\egypt1.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\levels\\universe\\egypt1.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\objdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\objdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\objdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\levelmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\levelmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\declare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\declare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\projects\\pvzu_level_maker\\pvzu_level_maker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|d:\\github projects\\pvzu_level_maker\\pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918800FB-1920-4869-8A90-F3C8A9C0B8D3}|PvZU_Level_Maker.csproj|solutionrelative:pvzu_level_maker\\editor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,111 +33,92 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 175,
+          "DockedWidth": 166,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Editor.cs [Design]",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Editor.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs [Design]",
-              "RelativeToolTip": "PvZU_Level_Maker\\Editor.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T16:00:09.132Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ObjData.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\ObjData.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\ObjData.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\ObjData.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\ObjData.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T10:04:47.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Editor.Designer.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.Designer.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Editor.Designer.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.Designer.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\Editor.Designer.cs",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAwwPcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T16:00:07.716Z",
+              "Title": "A.JSON",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\A.JSON",
+              "RelativeDocumentMoniker": "PvZU_Level_Maker\\levels\\Universe\\A.JSON",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\A.JSON",
+              "RelativeToolTip": "PvZU_Level_Maker\\levels\\Universe\\A.JSON",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-31T05:21:15.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Editor.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Editor.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\Editor.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwD4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T08:42:41.123Z",
+              "Title": "D.JSON",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\D.JSON",
+              "RelativeDocumentMoniker": "PvZU_Level_Maker\\levels\\Universe\\D.JSON",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\D.JSON",
+              "RelativeToolTip": "PvZU_Level_Maker\\levels\\Universe\\D.JSON",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-31T05:22:00.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EGYPT1.JSON",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\EGYPT1.JSON",
+              "RelativeDocumentMoniker": "PvZU_Level_Maker\\levels\\Universe\\EGYPT1.JSON",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\levels\\Universe\\EGYPT1.JSON",
+              "RelativeToolTip": "PvZU_Level_Maker\\levels\\Universe\\EGYPT1.JSON",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-31T05:22:01.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Declare.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Declare.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Declare.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Declare.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\Declare.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABhAAAAAAAAAA==",
+              "Title": "Editor.cs",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs",
+              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Editor.cs",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Editor.cs",
+              "RelativeToolTip": "PvZU_Level_Maker\\Editor.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwEIAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T09:12:05.474Z",
+              "WhenOpened": "2025-05-31T05:20:23.153Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LevelMaker.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\LevelMaker.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\LevelMaker.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\LevelMaker.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\LevelMaker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T08:45:55.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Classes.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Classes.cs",
-              "RelativeDocumentMoniker": "PvZU_Level_Maker\\Classes.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Classes.cs",
-              "RelativeToolTip": "PvZU_Level_Maker\\Classes.cs",
-              "ViewState": "AgIAAAoAAACMZmZmZuYbwDAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T08:44:40.481Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Program.cs",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Program.cs",
               "RelativeDocumentMoniker": "PvZU_Level_Maker\\Program.cs",
-              "ToolTip": "D:\\Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Program.cs",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\Program.cs",
               "RelativeToolTip": "PvZU_Level_Maker\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAwEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAIA7wDEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T15:59:59.874Z"
+              "WhenOpened": "2025-02-24T15:59:59.874Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 184,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ObjData.cs",
+              "DocumentMoniker": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\ObjData.cs",
+              "RelativeDocumentMoniker": "PvZU_Level_Maker\\ObjData.cs",
+              "ToolTip": "D:\\Github Projects\\PvZU_Level_Maker\\PvZU_Level_Maker\\ObjData.cs",
+              "RelativeToolTip": "PvZU_Level_Maker\\ObjData.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T10:04:47.437Z",
+              "EditorCaption": ""
             }
           ]
         }

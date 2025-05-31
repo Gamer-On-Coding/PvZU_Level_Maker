@@ -1,0 +1,134 @@
+{
+    "#comment": "Egypt SoS - 1",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_EGYPT]",
+                "FirstIntroNarrative": "MODERN_1_INTRO",
+                "FirstRewardParam": "key",
+                "FirstRewardType": "unlock_other",
+				"CurrencyAmount": "1",
+                "LevelNumber": "7A",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(EgyptMowers@LevelModules)",
+                    "RTID(Gravestones@CurrentLevel)",
+                    "RTID(SandSlides@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(WaveManagerProps@CurrentLevel)"
+                ],
+                "MusicType": "MiniGame_A",
+                "Name": "ass :3",
+                "StageModule": "RTID(MausoleumStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [        "RTID(BeatTheLevel@CurrentLevel)",
+                    "RTID(SunUsed@CurrentLevel)",
+                    "RTID(SunProduced@CurrentLevel)",
+                    "RTID(SunHoldout@CurrentLevel)",
+                    "RTID(KillZombiesTimer@CurrentLevel)",
+                    "RTID(PlantsLost@CurrentLevel)",
+                    "RTID(SimultaneousPlants@CurrentLevel)",
+                    "RTID(ZombieDistance@CurrentLevel)"]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {"aliases":["SunUsed"],
+            "objclass": "StarChallengeSunUsedProps",
+            "objdata": { "MaximumSun": 500 }
+        },
+        {"aliases":["SunProduced"],
+            "objclass": "StarChallengeSunProducedProps",
+            "objdata": { "TargetSun": 500 }
+        },
+        {"aliases":["SunHoldout"],
+            "objclass": "StarChallengeSpendSunHoldoutProps",
+            "objdata": { "HoldoutSeconds": 8 }
+        },
+        {"aliases":["KillZombiesTimer"],
+            "objclass": "StarChallengeKillZombiesInTimeProps",
+            "objdata": {
+                "Time": 15,
+                "ZombiesToKill": 10
+            }
+        },
+        {"aliases":["PlantsLost"],
+            "objclass": "StarChallengePlantsLostProps",
+            "objdata": { "MaximumPlantsLost": 10 }
+        },
+        {"aliases": ["SimultaneousPlants"],
+            "objclass": "StarChallengeSimultaneousPlantsProps",
+            "objdata": { "MaximumPlants": 10 }
+        },
+        {"aliases":["ZombieDistance"],
+            "objclass": "StarChallengeZombieDistanceProps",
+            "objdata": { "TargetDistance": 8 }
+        },
+        {"aliases": ["MaxSun"],
+            "objclass": "LevelMutatorMaxSunProps",
+            "objdata": {
+            "MaxSunOverride": 500
+            }
+        },
+        {
+                    "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 1,
+                "WaveCount": 1,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

@@ -27,3 +27,16 @@ D:\Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\refint\PvZU_Level_Maker.dl
 D:\Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.pdb
 D:\Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.genruntimeconfig.cache
 D:\Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\ref\PvZU_Level_Maker.dll
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.csproj.AssemblyReference.cache
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.Container.resources
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.Editor.resources
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.LevelMaker.resources
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.csproj.GenerateResource.cache
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.AssemblyInfoInputs.cache
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.AssemblyInfo.cs
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.csproj.CoreCompileInputs.cache
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.sourcelink.json
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.dll
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\refint\PvZU_Level_Maker.dll
+D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.pdb

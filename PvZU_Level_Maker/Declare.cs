@@ -38,17 +38,43 @@
         #region Stage Module Decleration
         public static readonly StageModule ModernStage = new() { name = "Modern Stage", id = "RTID(ModernStage@LevelModules)" };
         public static readonly StageModule MausoleumStage = new() { name = "Mausoleum Stage", id = "RTID((MausoleumStage@LevelModules)" };
+        public static readonly StageModule NightStage = new() { name = "Night Stage", id = "RTID(NightStage@LevelModules)" };
         #endregion
 
         #region First Reward Type Declaration
         public static readonly RewardType Plant = new() { typeName = "Plant", typeID = "unlock_plant" };
         public static readonly RewardType Collectable = new() { typeName = "Collectable", typeID = "collectable" };
+        public static readonly RewardType Coins = new() { typeName = "Coins", typeID = "reward_coins" };
+        public static readonly RewardType Costume = new() { typeName = "Costume", typeID = "reward_costume" };
         #endregion
 
         #region Loot Decleration
         public static readonly Loot defaultLoot = new() { LootID = "RTID(DefaultLoot@LevelModules", LootName = "Default" };
         public static readonly Loot noLoot = new() { LootID = "NoLoot@LevelModules", LootName = "No Loot" };
         public static readonly Loot dangerRoomLoot = new() { LootID = "", LootName = "Danger Room" };
+        public static readonly Loot miniGameLoot = new() { LootID = "RTID(MiniGameLoot@LevelModules)", LootName = "Mini-Game Loot" };
+        public static readonly Loot hardModeLoot = new() { LootID = "RTID(HardModeLoot@LevelModules)", LootName = "Hard Mode Loot" };
+        #endregion
+
+        #region Portal Type Decleration
+        public static readonly PortalType IcePortal = new() { name = "Ice Portal", id = "ice" };
+        public static readonly PortalType FirePortal = new() { name = "Fire Portal", id = "fire" };
+        public static readonly PortalType ShadowPortal = new() { name = "Shadow Portal", id = "shadow" };
+        #endregion
+
+        #region Spawn Effect
+        public static readonly SpawnEffect DefaultEffect = new() { name = "Default Portal Effect", effectID = "FX_PortalOpen" };
+        public static readonly SpawnEffect BigBoom = new() { name = "Big Explosion", effectID = "FX_BigExplosion" };
+        #endregion
+
+        #region Spawn Sound
+        public static readonly SpawnSound PortalSound = new() { name = "Portal Open", soundID = "SFX_Zombie_Portal" };
+        public static readonly SpawnSound PlantfoodReady = new() { name = "Plantfood Ready", soundID = "SFX_Plantfood_Ready" };
+        #endregion
+
+        #region Wave Manager Props
+        public static readonly WaveManagerProps DefaultWaves = new() { name = "Default", id = "RTID(WaveManagerProps@CurrentLevel)" };
+        public static readonly WaveManagerProps FastWaves = new() { name = "Fast Waves", id = "RTID(FastWaveManagerProps@CurrentLevel)" };
         #endregion
     }
 }

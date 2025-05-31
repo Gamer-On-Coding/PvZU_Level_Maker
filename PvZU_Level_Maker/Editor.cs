@@ -57,6 +57,10 @@ namespace PvZU_Level_Maker
                 levelDefinition.firstRewardType = firstReward.rewardType.typeID;
                 levelDefinition.loot = loot.LootID;
                 levelDefinition.currencyAmount = coins;
+                levelDefinition.description = "[PLAYERS_TRIP_TO]"/*LevelMaker.selected_world.world_description*/;
+                levelDefinition.levelNumber = Int32.Parse(LevelMaker.selected_level);
+                //levelDefinition.redirectTo = ;
+                //levelDefinition.progressionTag = ;
 
                 Program.level.objects.First(x => x.objclass.Equals("LevelDefinition")).objdata = levelDefinition;
 

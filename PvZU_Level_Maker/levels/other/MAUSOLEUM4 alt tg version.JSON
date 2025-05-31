@@ -1,0 +1,753 @@
+{
+    "#comment": "Mausoleum 4",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
+                "FirstRewardParam": "pomegranatepult",
+                "FirstRewardType": "unlock_plant",
+                "LevelNumber": 4,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(MausoleumMowers@LevelModules)",
+                    "RTID(MausoleumLane@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(MausoleumStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "MausoleumLane"
+            ],
+            "objclass": "MausoleumLaneProperties",
+            "objdata": {
+                "LaneGrids": [
+                    [
+                        {
+                            "X": 8,
+                            "Y": 2
+                        },
+                        {
+                            "X": 7,
+                            "Y": 2
+                        },
+                        {
+                            "X": 6,
+                            "Y": 2
+                        },
+                        {
+                            "X": 5,
+                            "Y": 2
+                        },
+                        {
+                            "X": 4,
+                            "Y": 2
+                        },
+                        {
+                            "X": 4,
+                            "Y": 3
+                        },
+                        {
+                            "X": 3,
+                            "Y": 3
+                        },
+                        {
+                            "X": 2,
+                            "Y": 3
+                        },
+                        {
+                            "X": 2,
+                            "Y": 4
+                        },
+                        {
+                            "X": 1,
+                            "Y": 4
+                        },
+                        {
+                            "X": 0,
+                            "Y": 4
+                        }
+                    ],
+                    [
+                        {
+                            "X": 8,
+                            "Y": 2
+                        },
+                        {
+                            "X": 7,
+                            "Y": 2
+                        },
+                        {
+                            "X": 6,
+                            "Y": 2
+                        },
+                        {
+                            "X": 5,
+                            "Y": 2
+                        },
+                        {
+                            "X": 4,
+                            "Y": 2
+                        },
+                        {
+                            "X": 4,
+                            "Y": 1
+                        },
+                        {
+                            "X": 3,
+                            "Y": 1
+                        },
+                        {
+                            "X": 2,
+                            "Y": 1
+                        },
+                        {
+                            "X": 2,
+                            "Y": 0
+                        },
+                        {
+                            "X": 1,
+                            "Y": 0
+                        },
+                        {
+                            "X": 0,
+                            "Y": 0
+                        }
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -40,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(mausoleum@ZombieTypes)",
+                            "RTID(mausoleum_armor1@ZombieTypes)",
+                            "RTID(mausoleum_drunk@ZombieTypes)",
+                            "RTID(mausoleum_shield@ZombieTypes)",
+                            "RTID(mausoleum_cavalry@ZombieTypes)",
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -25,
+                        "StartingPoints": -100,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(mausoleum@ZombieTypes)",
+                            "RTID(mausoleum_armor1@ZombieTypes)",
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(mausoleum@ZombieTypes)",
+                            "RTID(mausoleum_armor1@ZombieTypes)",
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(mausoleum@ZombieTypes)",
+                            "RTID(mausoleum_armor1@ZombieTypes)",
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(mausoleum_armor1@ZombieTypes)",
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(mausoleum_armor2@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 9,
+                "WaveCount": 18,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    }					
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [ 
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",						
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave17"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave18"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",						
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",						
+                        "Type": "RTID(mausoleum_shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_drunk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mausoleum_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

@@ -1,0 +1,548 @@
+{
+    "#comment": "Mausoleum 1",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_MODERN]",
+                "FirstIntroNarrative": "MODERN_1_INTRO",
+                "FirstRewardParam": "bambruce",
+                "FirstRewardType": "unlock_plant",
+                "LevelNumber": 1,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(MausoleumMowers@LevelModules)",
+                    "RTID(MausoleumLane@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(FrozenPlantPlacement@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "Name": "[MODERN_LEVEL_NAME]",
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(ModernStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "MausoleumLane"
+            ],
+            "objclass": "MausoleumLaneProperties",
+            "objdata": {
+                "LaneGrids": [
+                    [
+                        {"X":8, "Y":0},
+                        {"X":7, "Y":0},
+                        {"X":6, "Y":0},
+                        {"X":5, "Y":0},
+                        {"X":5, "Y":1},
+                        {"X":5, "Y":2},
+                        {"X":5, "Y":3},
+                        {"X":5, "Y":4},
+                        {"X":4, "Y":4},
+                        {"X":3, "Y":4},
+                        {"X":2, "Y":4},
+                        {"X":1, "Y":4},
+                        {"X":0, "Y":4}
+                    ],
+                    [
+                        {"X":8, "Y":4},
+                        {"X":7, "Y":4},
+                        {"X":7, "Y":3},
+                        {"X":7, "Y":2},
+                        {"X":7, "Y":1},
+                        {"X":7, "Y":0},
+                        {"X":6, "Y":0},
+                        {"X":5, "Y":0},
+                        {"X":4, "Y":0},
+                        {"X":3, "Y":0},
+                        {"X":2, "Y":0},
+                        {"X":1, "Y":0},
+                        {"X":0, "Y":0}
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PlantBlackList": ["pomegranatepult","carrotallery"],
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -40,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(sergeant@ZombieTypes)",
+                            "RTID(sergeant_armor1@ZombieTypes)",
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -25,
+                        "StartingPoints": -100,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(sergeant@ZombieTypes)",
+                            "RTID(sergeant_armor1@ZombieTypes)",
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(sergeant@ZombieTypes)",
+                            "RTID(sergeant_armor1@ZombieTypes)",
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(sergeant@ZombieTypes)",
+                            "RTID(sergeant_armor1@ZombieTypes)",
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(sergeant_armor1@ZombieTypes)",
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(sergeant_armor2@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 16,
+                "WaveSpendingPointIncrement": 0,
+                "WaveSpendingPoints": 0,
+                "Waves": [
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"],
+                    ["RTID(Wave @CurrentLevel)"]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+					{
+                        "Row": "5",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+				]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(cart_hawker@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cart_hawker@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mausoleum_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cart_hawker@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(shield@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(archer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

@@ -51,6 +51,40 @@ namespace PvZU_Level_Maker
     }
     #endregion
 
+    #region portal
+    public class PortalType
+    {
+        public string name;
+        public string id;
+
+        public override string ToString() => name;
+    }
+    #endregion
+
+    public class SpawnEffect
+    {
+        public string name;
+        public string effectID;
+
+        public override string ToString() => name;
+    }
+
+    public class SpawnSound
+    {
+        public string name;
+        public string soundID;
+
+        public override string ToString() => name;
+    }
+
+    public class WaveManagerProps
+    {
+        public string name;
+        public string id;
+
+        public override string ToString() => name;
+    }
+
     #region json structure
     public class Level
     {

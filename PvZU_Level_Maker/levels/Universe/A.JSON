@@ -1,0 +1,394 @@
+{
+    "#comment": "SAMPLE",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",//开局显示的文字
+                "FirstIntroNarrative": "MODERN_1_INTRO",
+                "FirstRewardParam": "moonflower",//第一次通关时奖励
+                "FirstRewardType": "unlock_plant",//第一次通关时奖励种类
+                "LevelNumber": 1,//关卡编号
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [//模块
+                    "RTID(StandardIntro@LevelModules)",//进入时目标显示
+                    "RTID(DefaultSunDropper@LevelModules)",//阳光掉落等级
+                    "RTID(ZombiesDeadWinCon@LevelModules)",//僵尸掉落金币
+                    "RTID(ModernMowers@LevelModules)",//小推车
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",//食脑判定
+                    "RTID(WaveManagerProps@CurrentLevel)"
+                ],
+                "Name": "[MODERN_LEVEL_NAME]",//关卡名称
+                "NormalPresentTable": "egypt_normal_01",//？？？
+                "ShinyPresentTable": "egypt_shiny_01",//？？？
+                "StageModule": "RTID(ModernStage@LevelModules)"//舞台模块
+            }
+        },
+        {
+            "aliases": [//秦始皇陵轨道
+                "MausoleumLane"
+            ],
+            "objclass": "MausoleumLaneProperties",
+            "objdata": {
+                "LaneGrids": [
+                    {
+                        "X":0,
+                        "Y":1
+                    },
+                    {
+                        "X":1,
+                        "Y":1
+                    },
+                    {
+                        "X":2,
+                        "Y":1
+                    },
+                    {
+                        "X":2,
+                        "Y":2
+                    },
+                    {
+                        "X":3,
+                        "Y":2
+                    },
+                    {
+                        "X":4,
+                        "Y":2
+                    },
+                    {
+                        "X":4,
+                        "Y":3
+                    },
+                    {
+                        "X":5,
+                        "Y":3
+                    },
+                    {
+                        "X":6,
+                        "Y":3
+                    },
+                    {
+                        "X":7,
+                        "Y":3
+                    },
+                    {
+                        "X":8,
+                        "Y":3
+                    }
+
+                ]
+            }
+        },
+        {
+            "aliases": [//种子包方式
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+                "WaveCount": 10,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)",
+                        "RTID(Wave5PortalsEvent0@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)",
+                        "RTID(Wave8PortalsEvent0@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)",
+                        "RTID(Wave10PortalsEvent0@CurrentLevel)"]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(cavalry@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(shield@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sergeant@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(sergeant_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5PortalsEvent0"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 3,
+                "PortalRow": "2",
+                "PortalType": "egypt",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+        {
+            "aliases": [
+                "Wave8PortalsEvent0"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": "5",
+                "PortalRow": 1,
+                "PortalType": "pirate",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+        {
+            "aliases": [
+                "Wave10PortalsEvent0"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 4,
+                "PortalRow": 0,
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        }
+    ],
+    "version": 1
+}

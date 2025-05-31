@@ -1,0 +1,569 @@
+{
+    "#comment": "Egypt 8",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_EGYPT]",
+                "FirstRewardParam": "diamonds",
+                "FirstRewardType": "unlock_other",
+                "CurrencyAmount": "1",
+                "LevelNumber": 1,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+					"RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(EgyptMowers@LevelModules)",
+                    "RTID(Gravestones@CurrentLevel)",
+                    "RTID(SandSlides@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+					"RTID(LastStand@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(WaveManagerProps@CurrentLevel)"
+                ],
+				"MusicType": "MiniGame_B",
+                "Name": "[LASTSTAND_LEVEL_NAME]",
+                "StageModule": "RTID(EgyptStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "Gravestones"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "ForceSpawnData": [
+                    {"GridX": 8, "GridY": 0},
+                    {"GridX": 8, "GridY": 1},
+                    {"GridX": 8, "GridY": 2},
+                    {"GridX": 8, "GridY": 3},
+                    {"GridX": 8, "GridY": 4}
+                ]
+            }
+        },
+        {
+                    "aliases": [
+                "SandSlides"
+            ],
+            "objclass": "SandSlideProperties",
+            "objdata": {
+                "ForceSpawnData": [
+                    {"GridX": 7, "GridY": 0},
+                    {"GridX": 6, "GridY": 0},
+                    {"GridX": 7, "GridY": 1},
+                    {"GridX": 6, "GridY": 1},
+                    {"GridX": 7, "GridY": 2},
+                    {"GridX": 6, "GridY": 2},
+                    {"GridX": 7, "GridY": 3},
+                    {"GridX": 6, "GridY": 3},
+                    {"GridX": 7, "GridY": 4},
+                    {"GridX": 6, "GridY": 4},
+                    {"GridX": 2, "GridY": 0},
+                    {"GridX": 1, "GridY": 0},
+                    {"GridX": 2, "GridY": 1},
+                    {"GridX": 1, "GridY": 1},
+                    {"GridX": 2, "GridY": 2},
+                    {"GridX": 1, "GridY": 2},
+                    {"GridX": 2, "GridY": 3},
+                    {"GridX": 1, "GridY": 3},
+                    {"GridX": 2, "GridY": 4},
+                    {"GridX": 1, "GridY": 4}
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PresetPlantList": [],
+                "PlantBlackList": ["waxgourd", "sunflower", "twinsunflower"],
+                "SelectionMethod": "chooser"
+			}
+			
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengesAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"LastStand"
+			],
+			"objclass": "LastStandMinigameProperties",
+			"objdata": {
+				"StartingPlantfood": 2,
+				"StartingSun": 2375
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"ManualStartup": true,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+                "WaveCount": 14,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)"],
+                    ["RTID(Wave11@CurrentLevel)"],
+                    ["RTID(Wave12@CurrentLevel)"],
+                    ["RTID(Wave13@CurrentLevel)"],
+                    ["RTID(Wave14@CurrentLevel)"]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor2@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"3",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"1",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy_armor2@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"3",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"3",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"1",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mummy_armor2@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor2@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"2",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"1",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row" :"4",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pharaoh@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy_armor1@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(camel_onehump@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(egypt_cleopatra@ZombieTypes@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(mummy@ZombieTypes@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

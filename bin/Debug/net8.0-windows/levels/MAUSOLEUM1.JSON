@@ -5,7 +5,16 @@
       "objclass": "LevelDefinition",
       "objdata": {
         "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
-        "LevelNumber": 1
+        "FirstRewardParam": "peashooter",
+        "FirstRewardType": "unlock_plant",
+        "LevelNumber": 1,
+        "Modules": [
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(MausoleumMowers@LevelModules)",
+          "RTID(TutorialMowers@LevelModules)",
+          "RTID(WaveManagerProps@CurrentLevel)"
+        ],
+        "StageModule": "RTID((MausoleumStage@LevelModules)"
       }
     }
   ],

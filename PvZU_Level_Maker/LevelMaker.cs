@@ -7,12 +7,18 @@ namespace PvZU_Level_Maker
     public partial class LevelMaker : Form
     {
         public static readonly World[] worlds = [Declare.AE, Declare.EM, Declare.KW, Declare.PS, Declare.WW];
-        public static Module[] modules = [Declare.DefaultSunDropper, Declare.FastSunDropper, Declare.VeryFastSunDropper, Declare.SlowSunDropper,
-            Declare.VerySlowSunDropper, Declare.MausoleumLane, Declare.TutorialMowers, Declare.ModernMowers, Declare.MausoleumMowers, 
-            Declare.DefaultZombieWinCondition, Declare.ZombiesDeadWinCon, Declare.WaveManagerProps, Declare.StandardIntro, Declare.SeedBank];
-        internal static Loot[] loot = [ Declare.dangerRoomLoot, Declare.defaultLoot, Declare.noLoot];
+        public static Module[] modules = [
+            Declare.DefaultSunDropper, Declare.FastSunDropper, Declare.VeryFastSunDropper, Declare.SlowSunDropper,
+            Declare.VerySlowSunDropper, Declare.MausoleumLane, Declare.TutorialMowers, Declare.ModernMowers,
+            Declare.MausoleumMowers, Declare.DefaultZombieWinCondition, Declare.ZombiesDeadWinCon,
+            Declare.WaveManagerProps, Declare.StandardIntro, Declare.SeedBank ];
+        internal static Loot[] loot = [ Declare.dangerRoomLoot, Declare.defaultLoot, Declare.noLoot, Declare.miniGameLoot, Declare.hardModeLoot ];
         public static readonly StageModule[] stageModules = [ Declare.MausoleumStage, Declare.ModernStage];
-        public static readonly RewardType[] rewardTypes = [Declare.Collectable, Declare.Plant];
+        public static readonly RewardType[] rewardTypes = [Declare.Collectable, Declare.Plant, Declare.Coins, Declare.Costume];
+        public static readonly PortalType[] portalTypes = [ Declare.IcePortal, Declare.FirePortal, Declare.ShadowPortal];
+        public static readonly SpawnEffect[] spawnEffects = [ Declare.DefaultEffect, Declare.BigBoom ];
+        public static readonly SpawnSound[] spawnSounds = [ Declare.PortalSound, Declare.PlantfoodReady];
+        public static readonly WaveManagerProps[] waveManagerProps = [ Declare.DefaultWaves, Declare.FastWaves ];
 
         public LevelMaker()
         {
