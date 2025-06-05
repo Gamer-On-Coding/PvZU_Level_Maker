@@ -4,17 +4,81 @@
     {
       "objclass": "LevelDefinition",
       "objdata": {
+        "CurrencyAmount": 3,
         "Description": "[PLAYERS_TRIP_TO_MAUSOLEUM]",
+        "FirstIntroNarrative": null,
         "FirstRewardParam": "peashooter",
         "FirstRewardType": "unlock_plant",
         "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules",
         "Modules": [
-          "RTID(DefaultZombieWinCondition@LevelModules)",
-          "RTID(MausoleumMowers@LevelModules)",
-          "RTID(TutorialMowers@LevelModules)",
-          "RTID(WaveManagerProps@CurrentLevel)"
+          "RTID(MausoleumLane@CurrentLevel)",
+          "RTID(StandardIntro@LevelModules)"
         ],
+        "Name": "[MAUSOLEUM_LEVEL_NAME]",
+        "NormalPresentTable": null,
+        "ShinyPresentTable": null,
         "StageModule": "RTID((MausoleumStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 0,
+        "WaveCount": 2,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(mummy_armor1@ZombieTypes)"
+          }
+        ]
       }
     }
   ],

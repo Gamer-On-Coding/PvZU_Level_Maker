@@ -46,6 +46,11 @@ namespace PvZU_Level_Maker
             public int? ArmorType { get; set; } // Nullable to handle cases where armor type is not present
             public float Speed { get; set; }
         }
+
+        public override string ToString()
+        {
+            return this.Sprite;
+        }
     }
     public class ZombieConfig
     {

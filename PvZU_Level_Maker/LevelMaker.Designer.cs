@@ -14,6 +14,7 @@ namespace PvZU_Level_Maker
         public static World selected_world;
         public static string selected_level;
         public int suf_lvl;
+        public int pre_lvl;
         public string pathname;
 
         /// <summary>
@@ -189,48 +190,60 @@ namespace PvZU_Level_Maker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Level level = Program.level;
-            if (worldSelect.SelectedIndex > -1 && levelPrefix.Text.Length > 0 && levelSuffix.Text.Length > 0)
-            {
-
-
-                selected_world = (World)worldSelect.SelectedItem;
-                selected_level = levelPrefix.Text + " - " + levelSuffix.Text;
-                suf_lvl = Int32.Parse(levelSuffix.Text);
-
-                if (!Directory.Exists(@"levels/"))
-                {
-                    Directory.CreateDirectory(@"levels/");
-                }
-
-                Program.pathname = pathname = "levels/" + selected_world.world_id + suf_lvl + ".JSON";
-
-                if (Directory.Exists(pathname))
-                {
-                    level = Program.LoadLevel(pathname);
-                }
-                else
-                {
-                    level.comment = selected_world.world_id + suf_lvl;
-                }
-
-                Program.ReadConfigs();
-                Program.AddBasicLevelDefinition(selected_world, suf_lvl, Program.level);
-
-                Editor form = new Editor();
-                form.Show();
-
-                this.Close();
-            }
-            else
+            // Validate input fields
+            if (worldSelect.SelectedIndex <= -1 || string.IsNullOrEmpty(levelPrefix.Text) || string.IsNullOrEmpty(levelSuffix.Text))
             {
                 error.ForeColor = Color.Red;
                 error.Location = new Point(420, 35);
                 error.Text = "Fill all the fields first";
+                return;
             }
+
+            // Parse level numbers
+            selected_world = (World)worldSelect.SelectedItem;
+            selected_level = $"{levelPrefix.Text} - {levelSuffix.Text}";
+
+            if (!int.TryParse(levelPrefix.Text, out pre_lvl) || !int.TryParse(levelSuffix.Text, out suf_lvl))
+            {
+                error.ForeColor = Color.Red;
+                error.Text = "Level numbers must be integers";
+                return;
+            }
+
+            // Ensure levels directory exists
+            Directory.CreateDirectory(@"levels/");
+            Program.pathname = pathname = $"levels/{selected_world.world_id}{pre_lvl}.json";
+
+            // Load or create level
+            if (File.Exists(pathname))
+            {
+                Program.level = Program.LoadLevel(pathname);
+                Program.loadingFile = true;
+
+                // Validate loaded level structure
+                if (Program.level.objects == null)
+                {
+                    Program.level.objects = new List<GameObject>();
+                }
+            }
+            else
+            {
+                Program.level = new Level()
+                {
+                    comment = $"{selected_world.world_id}{suf_lvl}",
+                    objects = new List<GameObject>(),
+                    version = 1
+                };
+                Program.AddBasicLevelDefinition(selected_world, pre_lvl, Program.level);
+            }
+
+            // Configure level
+            Program.ReadConfigs();
+
+            // Open editor
+            new Editor().Show();
+            this.Close();
         }
-
-
 
         #endregion
 

@@ -19,6 +19,8 @@ namespace PvZU_Level_Maker
         public static readonly SpawnEffect[] spawnEffects = [ Declare.DefaultEffect, Declare.BigBoom ];
         public static readonly SpawnSound[] spawnSounds = [ Declare.PortalSound, Declare.PlantfoodReady];
         public static readonly WaveManagerProps[] waveManagerProps = [ Declare.DefaultWaves, Declare.FastWaves ];
+        public static readonly string[] seedSelectionMethods = ["chooser", "preset", "random", "disabled"];
+
 
         public LevelMaker()
         {

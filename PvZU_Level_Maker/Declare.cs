@@ -4,11 +4,11 @@
     {
         #region World Declaration
         //Worlds
-        public static readonly World EM = new() { world_name = "Emperors Mausoleum", world_id = "MAUSOLEUM", comment_name = "Mausoleum", world_description = "[PLAYERS_TRIP_TO_MAUSOLEUM]" };
-        public static readonly World AE = new() { world_name = "Ancient Egypt", world_id = "" };
-        public static readonly World PS = new() { world_name = "Pirate Seas", world_id = "" };
-        public static readonly World WW = new() { world_name = "Wild West", world_id = "" };
-        public static readonly World KW = new() { world_name = "Kong-Fu World", world_id = "" };
+        public static readonly World EM = new() { world_name = "Emperors Mausoleum", world_id = "MAUSOLEUM", comment_name = "Mausoleum", world_description = "[PLAYERS_TRIP_TO_MAUSOLEUM]", level_name_format = "[MAUSOLEUM_LEVEL_NAME]" };
+        public static readonly World AE = new() { world_name = "Ancient Egypt", world_id = "EGYPT", comment_name = "Egypt", world_description = "[PLAYERS_TRIP_TO_EGYPT]", level_name_format = "[EGYPT_LEVEL_NAME]" };
+        public static readonly World PS = new() { world_name = "Pirate Seas", world_id = "PIRATE", comment_name = "Pirate", world_description = "[PLAYERS_TRIP_TO_PIRATE_SEAS]", level_name_format = "[PIRATE_LEVEL_NAME]" };
+        public static readonly World WW = new() { world_name = "Wild West", world_id = "WILDWEST", comment_name = "WildWest", world_description = "[PLAYERS_TRIP_TO_WILD_WEST]", level_name_format = "[WILDWEST_LEVEL_NAME]" };
+        public static readonly World KW = new() { world_name = "Kong-Fu World", world_id = "KONGFU", comment_name = "KongFu", world_description = "[PLAYERS_TRIP_TO_KONGFU]", level_name_format = "[KONGFU_LEVEL_NAME]" };
         #endregion
 
         #region Module Decleration

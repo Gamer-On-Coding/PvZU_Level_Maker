@@ -23,7 +23,7 @@ namespace PvZU_Level_Maker
             throw new NotImplementedException();
         }
 
-        
+
     }
 
     public class RewardType
@@ -96,10 +96,17 @@ namespace PvZU_Level_Maker
     }
     public class GameObject
     {
+        [JsonProperty("aliases")]
         public List<string>? aliases { get; set; }
-        public string? objclass { get; set; }
-        public ObjData? objdata { get; set; }
+
+        [JsonProperty("objclass")]
+        public string objclass { get; set; }
+
+        [JsonProperty("objdata")]
+        [Newtonsoft.Json.JsonConverter(typeof(ObjDataConverter))]
+        public ObjData objdata { get; set; }
     }
+
     public class LaneGrid
     {
         [JsonProperty("X")]
@@ -110,14 +117,14 @@ namespace PvZU_Level_Maker
     }
     public class DynamicZombie
     {
-        [JsonProperty("PointIncrementPerWave")]
-        public int pointIncrementPerWave { get; set; }
+        [JsonProperty("StartingWave")]
+        public int startingWave { get; set; }
 
         [JsonProperty("StartingPoints")]
         public int startingPoints { get; set; }
 
-        [JsonProperty("StartingWave")]
-        public int startingWave { get; set; }
+        [JsonProperty("PointIncrementPerWave")]
+        public int pointIncrementPerWave { get; set; }
 
         [JsonProperty("ZombiePool")]
         public List<string> zombiePool { get; set; }
@@ -139,6 +146,7 @@ namespace PvZU_Level_Maker
         public required string world_id;
         public string? world_description;
         public string? comment_name;
+        public string? level_name_format;
 
         public override string ToString() => world_name;
     }
@@ -163,48 +171,4 @@ namespace PvZU_Level_Maker
         public int y { get; set; }
     }
     #endregion
-
-    public class ObjDataConverter : Newtonsoft.Json.JsonConverter
-    {
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(ObjData);
-        }
-
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            var jsonObject = JObject.Load(reader);
-            string? objclass = (string)jsonObject["objclass"];
-
-            ObjData objdata;
-            switch (objclass)
-            {
-                case "LevelDefinition":
-                    objdata = new LevelDefinition();
-                    break;
-                case "MausoleumLaneProperties":
-                    objdata = new MausoleumLaneProperties();
-                    break;
-                case "SeedBankProperties":
-                    objdata = new SeedBankProperties();
-                    break;
-                case "WaveManagerModuleProperties":
-                    objdata = new WaveManagerModuleProperties();
-                    break;
-                case "WaveManagerProperties":
-                    objdata = new WaveManagerProperties();
-                    break;
-                default:
-                    throw new NotImplementedException($"Unknown objclass: {objclass}");
-            }
-
-            serializer.Populate(jsonObject["objdata"].CreateReader(), objdata);
-            return objdata;
-        }
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }
