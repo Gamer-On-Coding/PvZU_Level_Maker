@@ -15,7 +15,7 @@ namespace PvZU_Level_Maker
         public static string selected_level;
         public int suf_lvl;
         public int pre_lvl;
-        public string pathname;
+        public string filename;
 
         /// <summary>
         ///  Required designer variable.
@@ -55,7 +55,6 @@ namespace PvZU_Level_Maker
         /// </summary>
         private void InitializeComponent()
         {
-
             components = new System.ComponentModel.Container();
             worldSelect = new ComboBox();
             worldDeclareBindingSource = new BindingSource(components);
@@ -65,6 +64,9 @@ namespace PvZU_Level_Maker
             button1 = new Button();
             levelSuffix = new TextBox();
             formattingLabel1 = new Label();
+            button2 = new Button();
+            label1 = new Label();
+            fbd = new FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)worldDeclareBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -146,12 +148,34 @@ namespace PvZU_Level_Maker
             formattingLabel1.TabIndex = 7;
             formattingLabel1.Text = "-";
             // 
+            // button2
+            // 
+            button2.Location = new Point(12, 58);
+            button2.Name = "button2";
+            button2.Size = new Size(168, 40);
+            button2.TabIndex = 8;
+            button2.Text = "Select Folder \r\n(Level File Location)";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(202, 72);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 15);
+            label1.TabIndex = 9;
+            label1.Text = "<-- Select Path";
+            // 
             // LevelMaker
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 39, 39);
-            ClientSize = new Size(452, 73);
+            ClientSize = new Size(452, 110);
+            Controls.Add(label1);
+            Controls.Add(button2);
             Controls.Add(formattingLabel1);
             Controls.Add(levelSuffix);
             Controls.Add(button1);
@@ -190,12 +214,26 @@ namespace PvZU_Level_Maker
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(fbd.SelectedPath))
+            {
+                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string levelsPath = Path.Combine(documentsPath, "levels");
+                Directory.CreateDirectory(levelsPath);
+                fbd.SelectedPath = levelsPath;
+            }
             // Validate input fields
             if (worldSelect.SelectedIndex <= -1 || string.IsNullOrEmpty(levelPrefix.Text) || string.IsNullOrEmpty(levelSuffix.Text))
             {
                 error.ForeColor = Color.Red;
                 error.Location = new Point(420, 35);
                 error.Text = "Fill all the fields first";
+                return;
+            }
+
+            var parts = LevelMaker.selected_level?.Split();
+            if (parts == null || parts.Length == 0 || !int.TryParse(parts[0], out int levelNum))
+            {
+                MessageBox.Show("Invalid level number.", "Error");
                 return;
             }
 
@@ -211,13 +249,12 @@ namespace PvZU_Level_Maker
             }
 
             // Ensure levels directory exists
-            Directory.CreateDirectory(@"levels/");
-            Program.pathname = pathname = $"levels/{selected_world.world_id}{pre_lvl}.json";
-
+            Program.filename = filename = $"{selected_world.world_id}{pre_lvl}.json";
+            Program.pathname = Path.Combine(fbd.SelectedPath, Program.filename);
             // Load or create level
-            if (File.Exists(pathname))
+            if (File.Exists(Program.pathname))
             {
-                Program.level = Program.LoadLevel(pathname);
+                Program.level = Program.LoadLevel(Program.pathname);
                 Program.loadingFile = true;
 
                 // Validate loaded level structure
@@ -256,5 +293,8 @@ namespace PvZU_Level_Maker
         private Button button1;
         private TextBox levelSuffix;
         private Label formattingLabel1;
+        private Button button2;
+        private Label label1;
+        private FolderBrowserDialog fbd;
     }
 }

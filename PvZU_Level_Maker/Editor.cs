@@ -19,11 +19,16 @@ namespace PvZU_Level_Maker
         public Editor()
         {
             InitializeComponent();
-
             lanePanels = new FlowLayoutPanel[] { Lane1, Lane2, Lane3, Lane4, Lane5 };
             InitializeMore();
-
             InitializeWaveList();
+
+            this.FormClosed += Editor_FormClosed;
+        }
+
+        private void Editor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void tabLevelDefinition_Click(object sender, EventArgs e)

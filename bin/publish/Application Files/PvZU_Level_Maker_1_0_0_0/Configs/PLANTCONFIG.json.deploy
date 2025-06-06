@@ -1,0 +1,256 @@
+{
+    "objects":[
+        {
+            "aliases": "peashooter",
+            "object": "obj_peashooter",
+            "sprite": "Peashooter",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 100,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "sunflower",
+            "object": "obj_sunflower",
+            "sprite": "Sunflower",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 50,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "wallnut",
+            "object": "obj_wallnut",
+            "sprite": "Wallnut",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 4000
+            },
+            "card": {
+                "cooldown": 20,
+                "cost": 50,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "potatomine",
+            "object": "obj_potatomine",
+            "sprite": "Potatomine",
+            "worldtype": "Tutorial",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 20,
+                "cost": 25,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "bambruce",
+            "object": "obj_bambruce",
+            "sprite": "Bambruce",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 150,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "pomegranatepult",
+            "object": "obj_pomegranatepult",
+            "sprite": "Pomegranatepult",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 200,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "sod",
+            "object": "obj_sod",
+            "sprite": "Sod",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 25,
+                "gridsort": 0
+            }
+        },
+        {
+            "aliases": "explodelion",
+            "object": "obj_explodelion",
+            "sprite": "Explodelion",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 200,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "venuszomtrap",
+            "object": "obj_venuszomtrap",
+            "sprite": "VenusZomtrap",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 50,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "carrotallery",
+            "object": "obj_carrotallery",
+            "sprite": "Carrotallery",
+            "worldtype": "Mausoleum",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 125,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "cabbagepult",
+            "object": "obj_cabbagepult",
+            "sprite": "Cabbagepult",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 100,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "repeater",
+            "object": "obj_repeater",
+            "sprite": "Repeater",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 200,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "bloomerang",
+            "object": "obj_bloomerang",
+            "sprite": "Bloomerang",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 175,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "twinsunflower",
+            "object": "obj_twinsunflower",
+            "sprite": "TwinSunflower",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 10,
+                "cost": 125,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "iceburg",
+            "object": "obj_iceburg",
+            "sprite": "IcebergLettuce",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 20,
+                "cost": 0,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "bonkchoy",
+            "object": "obj_bonkchoy",
+            "sprite": "BonkChoy",
+            "worldtype": "Egypt",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 150,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "snowpea",
+            "object": "obj_snowpea",
+            "sprite": "SnowPea",
+            "worldtype": "Premium",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 150,
+                "gridsort": 1
+            }
+        },
+        {
+            "aliases": "kernelpult",
+            "object": "obj_kernelpult",
+            "sprite": "Kernelpult",
+            "worldtype": "Pirate",
+            "basic": {
+                "health": 300
+            },
+            "card": {
+                "cooldown": 5,
+                "cost": 125,
+                "gridsort": 1
+            }
+        }
+    ]
+}

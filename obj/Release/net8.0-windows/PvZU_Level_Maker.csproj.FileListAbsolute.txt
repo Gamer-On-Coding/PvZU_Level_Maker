@@ -28,3 +28,7 @@ D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\refint\PvZU_Level
 D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\PvZU_Level_Maker.pdb
 D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\PvZU_Level_Maker.genruntimeconfig.cache
 D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\ref\PvZU_Level_Maker.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\PvZU_Level_Maker.dll.manifest
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\PvZU_Level_Maker.application
+D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\PvZU_Level_Maker.dll.manifest
+D:\Github Projects\PvZU_Level_Maker\obj\Release\net8.0-windows\PvZU_Level_Maker.application

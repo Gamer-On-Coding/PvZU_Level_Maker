@@ -12,6 +12,7 @@ namespace PvZU_Level_Maker
         /// <summary>
         ///  The main entry point 
         public static Level level = new();
+        public static string filename;
         public static string pathname;
 
         public static List<Plant> plants = [];
@@ -46,10 +47,10 @@ namespace PvZU_Level_Maker
 
             level.objects.Add(LevelDefinition);
 
-            WriteToFile(pathname);
+            WriteToFile(filename);
         }
 
-        public static void WriteToFile(string pathname)
+        public static void WriteToFile(string filename)
         {
             var settings = new JsonSerializerSettings
             {
@@ -70,7 +71,7 @@ namespace PvZU_Level_Maker
             }
 
             // Write JSON to file
-            File.WriteAllText(pathname, json);
+            File.WriteAllText(filename, json);
         }
 
 
@@ -83,7 +84,7 @@ namespace PvZU_Level_Maker
 
             zombies = JsonConvert.DeserializeObject<ZombieConfig>(zombiestring).objects;
         }
-        public static Level LoadLevel(string pathname)
+        public static Level LoadLevel(string filename)
         {
                 var settings = new JsonSerializerSettings
                 {
@@ -93,7 +94,7 @@ namespace PvZU_Level_Maker
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 };
 
-                string json = File.ReadAllText(pathname);
+                string json = File.ReadAllText(filename);
                 return JsonConvert.DeserializeObject<Level>(json, settings);
         }
         public static class JsonExtensions

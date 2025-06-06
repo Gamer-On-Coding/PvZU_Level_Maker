@@ -1,0 +1,13 @@
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\PvZU_Level_Maker.exe
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\PvZU_Level_Maker.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\PvZU_Level_Maker.deps.json
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\PvZU_Level_Maker.runtimeconfig.json
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\PvZU_Level_Maker.pdb
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\Guna.UI2.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\Newtonsoft.Json.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\System.IO.Pipelines.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\System.Management.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\System.Text.Encodings.Web.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\System.Text.Json.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\runtimes\win\lib\net7.0\System.Management.dll
+D:\Github Projects\PvZU_Level_Maker\bin\Release\net8.0-windows\app.publish\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Configs\PLANTCONFIG.json" />
+    <None Remove="Configs\ZOMBIECONFIG.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Configs\PLANTCONFIG.json" />
+    <Content Include="Configs\ZOMBIECONFIG.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Json" Version="9.0.0-preview.7.24405.7" />
