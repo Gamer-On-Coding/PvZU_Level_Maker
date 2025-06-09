@@ -237,7 +237,6 @@ namespace PvZU_Level_Maker
                 return;
             }
 
-            // Parse level numbers
             selected_world = (World)worldSelect.SelectedItem;
             selected_level = $"{levelPrefix.Text} - {levelSuffix.Text}";
 
@@ -248,7 +247,6 @@ namespace PvZU_Level_Maker
                 return;
             }
 
-            // Ensure levels directory exists
             Program.filename = filename = $"{selected_world.world_id}{pre_lvl}.json";
             Program.pathname = Path.Combine(fbd.SelectedPath, Program.filename);
             // Load or create level
