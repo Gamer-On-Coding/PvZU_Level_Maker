@@ -16,6 +16,10 @@ namespace PvZU_Level_Maker
         private FlowLayoutPanel[] lanePanels;
         private ToolTip zombieTooltip = new ToolTip();
 
+        private List<Plant> filteredPlants = new();
+        private HashSet<string> selectedBlacklist = new();
+
+
         public Editor()
         {
             InitializeComponent();
@@ -76,6 +80,24 @@ namespace PvZU_Level_Maker
                 levelDefinition.description = LevelMaker.selected_world.world_description;
                 levelDefinition.levelNumber = LevelMaker.pre_lvl;
 
+                GameObject seedBankObj = new()
+                {
+                    aliases = new List<string> { "SeedBankProps" },
+                    objclass = "SeedBankProperties",
+                    objdata = new SeedBankProperties
+                    {
+                        plantBlackList = selectedBlacklist.ToList(),
+                        selectionMethod = LevelMaker.seedSelectionMethods[comboBox4.SelectedIndex]
+                    }
+                };
+
+                int index1 = Program.level.objects.FindIndex(x => x.objclass == "SeedBankProperties");
+                if (index1 >= 0)
+                    Program.level.objects[index1] = seedBankObj;
+                else
+                    Program.level.objects.Add(seedBankObj);
+
+                //wave manager
                 WaveManagerProperties waveManager = new()
                 {
                     //flagWaveInterval = 8, IMPLEMENT LATER
@@ -97,9 +119,9 @@ namespace PvZU_Level_Maker
                     objdata = waveManager
                 };
 
-                int index = Program.level.objects.FindIndex(x => x.objclass == "WaveManagerProperties");
-                if (index >= 0)
-                    Program.level.objects[index] = waveManagerObj;
+                int index2 = Program.level.objects.FindIndex(x => x.objclass == "WaveManagerProperties");
+                if (index2 >= 0)
+                    Program.level.objects[index2] = waveManagerObj;
                 else
                     Program.level.objects.Add(waveManagerObj);
 
@@ -107,6 +129,7 @@ namespace PvZU_Level_Maker
 
                 Program.level.objects.RemoveAll(x => x.objclass == "SpawnZombiesJitteredWaveActionProps");
 
+                //waves
                 for (int i = 0; i < waves.Count; i++)
                 {
                     var wave = waves[i];

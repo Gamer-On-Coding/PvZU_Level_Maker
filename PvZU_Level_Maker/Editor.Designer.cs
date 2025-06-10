@@ -52,10 +52,12 @@ namespace PvZU_Level_Maker
             checkedListBox1 = new CheckedListBox();
             label1 = new Label();
             tabPage2 = new TabPage();
-            label8 = new Label();
+            plantTable = new TableLayoutPanel();
+            plantSearchBox = new TextBox();
             comboBox4 = new ComboBox();
             label7 = new Label();
             tabPage3 = new TabPage();
+            numericUpDown2 = new NumericUpDown();
             label9 = new Label();
             addZombieButton = new Button();
             zombieLaneTable = new TableLayoutPanel();
@@ -68,14 +70,13 @@ namespace PvZU_Level_Maker
             addWaveButton = new Button();
             waveListBox = new ListBox();
             button1 = new Button();
-            numericUpDown2 = new NumericUpDown();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
-            zombieLaneTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            zombieLaneTable.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -222,7 +223,8 @@ namespace PvZU_Level_Maker
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(label8);
+            tabPage2.Controls.Add(plantTable);
+            tabPage2.Controls.Add(plantSearchBox);
             tabPage2.Controls.Add(comboBox4);
             tabPage2.Controls.Add(label7);
             tabPage2.Location = new Point(4, 24);
@@ -233,20 +235,36 @@ namespace PvZU_Level_Maker
             tabPage2.Text = "Seed Bank";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // plantTable
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 50F);
-            label8.Location = new Point(42, 148);
-            label8.Name = "label8";
-            label8.Size = new Size(560, 89);
-            label8.TabIndex = 18;
-            label8.Text = "Not implemented";
+            plantTable.AutoScroll = true;
+            plantTable.ColumnCount = 4;
+            plantTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            plantTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            plantTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            plantTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            plantTable.Location = new Point(20, 64);
+            plantTable.Name = "plantTable";
+            plantTable.RowCount = 5;
+            plantTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            plantTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            plantTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            plantTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            plantTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            plantTable.Size = new Size(597, 290);
+            plantTable.TabIndex = 19;
+            // 
+            // plantSearchBox
+            // 
+            plantSearchBox.Location = new Point(405, 35);
+            plantSearchBox.Name = "plantSearchBox";
+            plantSearchBox.Size = new Size(212, 23);
+            plantSearchBox.TabIndex = 18;
             // 
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(6, 35);
+            comboBox4.Location = new Point(20, 35);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(176, 23);
             comboBox4.TabIndex = 17;
@@ -254,7 +272,7 @@ namespace PvZU_Level_Maker
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 17);
+            label7.Location = new Point(20, 17);
             label7.Name = "label7";
             label7.Size = new Size(100, 15);
             label7.TabIndex = 16;
@@ -276,6 +294,14 @@ namespace PvZU_Level_Maker
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Wave Manager";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(242, 303);
+            numericUpDown2.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(120, 23);
+            numericUpDown2.TabIndex = 6;
             // 
             // label9
             // 
@@ -404,14 +430,6 @@ namespace PvZU_Level_Maker
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(242, 303);
-            numericUpDown2.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
-            numericUpDown2.TabIndex = 6;
-            // 
             // Editor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -432,8 +450,8 @@ namespace PvZU_Level_Maker
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            zombieLaneTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            zombieLaneTable.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -446,6 +464,34 @@ namespace PvZU_Level_Maker
             comboBox4.Items.AddRange(LevelMaker.seedSelectionMethods);
 
             waves = new List<SpawnZombiesJitteredWaveActionProps>();
+
+            filteredPlants = new(Program.plants);
+            RenderPlantSelector();
+            var seedObj = Program.level.objects.FirstOrDefault(x => x.objclass == "SeedBankProperties");
+            if (seedObj?.objdata is SeedBankProperties sbProps)
+            {
+                // Set selection method
+                int index = Array.FindIndex(LevelMaker.seedSelectionMethods,
+                    m => m == sbProps.selectionMethod);
+                if (index >= 0)
+                    comboBox4.SelectedIndex = index;
+
+                // Load blacklisted plants into HashSet
+                selectedBlacklist = new HashSet<string>(sbProps.plantBlackList);
+                RenderPlantSelector(); // Re-highlight buttons
+            }
+
+
+            plantSearchBox.TextChanged += (s, e) =>
+            {
+                string query = plantSearchBox.Text.Trim().ToLower();
+                filteredPlants = Program.plants
+                    .Where(p => p.aliases.ToLower().Contains(query) || p.sprite.ToLower().Contains(query))
+                    .ToList();
+
+                RenderPlantSelector();
+            };
+
 
             if (Program.loadingFile)
             {
@@ -485,6 +531,64 @@ namespace PvZU_Level_Maker
             }
         }
 
+        private void RenderPlantSelector()
+        {
+            plantTable.Controls.Clear();
+
+            int cols = 4;
+            int rows = (int)Math.Ceiling(filteredPlants.Count / (float)cols);
+
+            plantTable.ColumnCount = cols;
+            plantTable.RowCount = rows;
+            plantTable.ColumnStyles.Clear();
+            plantTable.RowStyles.Clear();
+
+            for (int i = 0; i < cols; i++)
+                plantTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / cols));
+            for (int i = 0; i < rows; i++)
+                plantTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 60));
+
+            foreach (Plant plant in filteredPlants)
+            {
+                Button btn = new()
+                {
+                    AutoSize = true,
+                    Tag = plant,
+                    FlatStyle = selectedBlacklist.Contains(plant.aliases) ? FlatStyle.Flat : FlatStyle.Standard,
+                    BackgroundImageLayout = ImageLayout.Zoom,
+                    Margin = new Padding(4),
+                    Text = plant.sprite
+                    
+                };
+
+                string imagePath = $"sprites/plants/{plant.sprite}.png";
+                if (File.Exists(imagePath))
+                    btn.BackgroundImage = Image.FromFile(imagePath);
+
+                new ToolTip().SetToolTip(btn, plant.aliases);
+
+                btn.Click += (s, e) =>
+                {
+                    Button b = (Button)s;
+                    Plant p = (Plant)b.Tag;
+
+                    if (selectedBlacklist.Contains(p.aliases))
+                    {
+                        selectedBlacklist.Remove(p.aliases);
+                        b.FlatStyle = FlatStyle.Standard;
+                    }
+                    else
+                    {
+                        selectedBlacklist.Add(p.aliases);
+                        b.FlatStyle = FlatStyle.Flat;
+                    }
+                };
+
+                plantTable.Controls.Add(btn);
+            }
+        }
+
+
         #endregion
 
         private TabControl tabControl1;
@@ -505,7 +609,6 @@ namespace PvZU_Level_Maker
         private NumericUpDown numericUpDown1;
         private ComboBox comboBox4;
         private Label label7;
-        private Label label8;
         private TabPage tabPage3;
         private Button removeWaveButton;
         private Button addWaveButton;
@@ -533,5 +636,7 @@ namespace PvZU_Level_Maker
         private Button addZombieButton;
         private Label label9;
         private NumericUpDown numericUpDown2;
+        private TableLayoutPanel plantTable;
+        private TextBox plantSearchBox;
     }
 }

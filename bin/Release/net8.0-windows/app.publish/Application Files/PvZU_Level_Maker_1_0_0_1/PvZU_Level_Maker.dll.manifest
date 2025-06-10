@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PvZU_Level_Maker.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PvZU_Level_Maker.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -98,13 +98,13 @@
       <dsig:DigestValue>ipY4+Jgj0bVOGNhxUjqdkYUVal+Mw01Y53SQKk4p1Uc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PvZU_Level_Maker.dll" size="55808">
+  <file name="PvZU_Level_Maker.dll" size="59392">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>I9f8GfEGS6h4xIEoGFxujumv4v42ZjFzIaNX6ICory4=</dsig:DigestValue>
+      <dsig:DigestValue>0OHXoJ96LhZNjilokMrZBBNHh1Oym2jMyDajf1ApGFY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PvZU_Level_Maker.exe" size="139264">
@@ -113,7 +113,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ZR9tlUrmW24opbQ9e7zCNKBk0pM0SHdxOj4n5LxbkLQ=</dsig:DigestValue>
+      <dsig:DigestValue>dKwoKkwDizDkkTFCuUlz44/LMXO59m3T8mqWI9aySok=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PvZU_Level_Maker.runtimeconfig.json" size="515">

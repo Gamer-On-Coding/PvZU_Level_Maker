@@ -55,11 +55,11 @@ namespace PvZU_Level_Maker
 
     public class SeedBankProperties : ObjData
     {
-        [JsonProperty("SelectionMethod")]
-        public string selectionMethod { get; set; }
-
         [JsonProperty("PlantBlackList")]
         public List<string> plantBlackList { get; set; }
+
+        [JsonProperty("SelectionMethod")]
+        public string selectionMethod { get; set; }
     }
 
     public class WaveManagerProperties : ObjData
@@ -150,30 +150,56 @@ namespace PvZU_Level_Maker
             newSerializer.MissingMemberHandling = serializer.MissingMemberHandling;
             Console.WriteLine("Parsing object: " + jo.ToString());
 
+            // Try to use objclass if present
             if (jo["objclass"] != null)
             {
                 string objclass = jo["objclass"].Value<string>();
                 Console.WriteLine("Detected objclass: " + objclass);
-            }
-
-            if (jo["objclass"] != null)
-            {
-                string objclass = jo["objclass"].Value<string>();
                 if (_typeMap.TryGetValue(objclass, out Type concreteType))
                 {
                     return jo.ToObject(concreteType, newSerializer);
                 }
             }
 
-            // Fallback for direct ObjData objects
-            if (jo["CurrencyAmount"] != null) return jo.ToObject<LevelDefinition>(newSerializer);
-            if (jo["AdditionalPlantfood"] != null) return jo.ToObject<SpawnZombiesJitteredWaveActionProps>(newSerializer);
-            if (jo["WaveCount"] != null && jo["Waves"] != null) return jo.ToObject<WaveManagerProperties>(newSerializer);
+            // Try to infer type by matching known property sets
+            foreach (var kvp in _typeMap)
+            {
+                var type = kvp.Value;
+                var props = type.GetProperties().Select(p =>
+                {
+                    var attr = p.GetCustomAttributes(typeof(JsonPropertyAttribute), true)
+                                .Cast<JsonPropertyAttribute>().FirstOrDefault();
+                    return attr?.PropertyName ?? p.Name;
+                }).ToList();
 
+                if (props.All(pn => jo[pn] != null))
+                {
+                    return jo.ToObject(type, newSerializer);
+                }
+            }
 
-            Console.WriteLine("Unknown JSON: " + jo.ToString());
+            // Fallback for partial matches (at least one property matches)
+            foreach (var kvp in _typeMap)
+            {
+                var type = kvp.Value;
+                var props = type.GetProperties().Select(p =>
+                {
+                    var attr = p.GetCustomAttributes(typeof(JsonPropertyAttribute), true)
+                                .Cast<JsonPropertyAttribute>().FirstOrDefault();
+                    return attr?.PropertyName ?? p.Name;
+                }).ToList();
 
-            throw new JsonSerializationException("Cannot determine ObjData type");
+                if (props.Any(pn => jo[pn] != null))
+                {
+                    return jo.ToObject(type, newSerializer);
+                }
+            }
+
+            // If still unknown, log all keys for debugging
+            var keys = string.Join(", ", jo.Properties().Select(p => p.Name));
+            Console.WriteLine($"Unknown JSON object with keys: {keys}");
+
+            throw new JsonSerializationException($"Cannot determine ObjData type. JSON keys: {keys}");
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
