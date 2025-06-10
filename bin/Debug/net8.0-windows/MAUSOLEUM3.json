@@ -1,5 +1,5 @@
 {
-  "#comment": "MAUSOLEUM0",
+  "#comment": "MAUSOLEUM3",
   "objects": [
     {
       "objclass": "LevelDefinition",
@@ -9,7 +9,7 @@
         "FirstIntroNarrative": null,
         "FirstRewardParam": null,
         "FirstRewardType": null,
-        "LevelNumber": 2,
+        "LevelNumber": 3,
         "Loot": null,
         "Modules": null,
         "Name": null,

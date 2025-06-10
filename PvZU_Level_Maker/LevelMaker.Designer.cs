@@ -12,9 +12,7 @@ namespace PvZU_Level_Maker
     {
         public Color window = ColorTranslator.FromHtml("#272727");
         public static World selected_world;
-        public static string selected_level;
-        public int suf_lvl;
-        public int pre_lvl;
+        public static int pre_lvl;
         public string filename;
 
         /// <summary>
@@ -62,8 +60,6 @@ namespace PvZU_Level_Maker
             levelLabel = new Label();
             levelPrefix = new TextBox();
             button1 = new Button();
-            levelSuffix = new TextBox();
-            formattingLabel1 = new Label();
             button2 = new Button();
             label1 = new Label();
             fbd = new FolderBrowserDialog();
@@ -120,33 +116,13 @@ namespace PvZU_Level_Maker
             // 
             button1.BackColor = Color.White;
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(329, 28);
+            button1.Location = new Point(268, 29);
             button1.Name = "button1";
             button1.Size = new Size(86, 23);
             button1.TabIndex = 5;
             button1.Text = "Select";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // levelSuffix
-            // 
-            levelSuffix.BackColor = Color.White;
-            levelSuffix.ForeColor = Color.Black;
-            levelSuffix.Location = new Point(267, 28);
-            levelSuffix.Name = "levelSuffix";
-            levelSuffix.Size = new Size(34, 23);
-            levelSuffix.TabIndex = 6;
-            // 
-            // formattingLabel1
-            // 
-            formattingLabel1.AutoSize = true;
-            formattingLabel1.BackColor = Color.Transparent;
-            formattingLabel1.ForeColor = Color.White;
-            formattingLabel1.Location = new Point(249, 33);
-            formattingLabel1.Name = "formattingLabel1";
-            formattingLabel1.Size = new Size(12, 15);
-            formattingLabel1.TabIndex = 7;
-            formattingLabel1.Text = "-";
             // 
             // button2
             // 
@@ -173,11 +149,9 @@ namespace PvZU_Level_Maker
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 39, 39);
-            ClientSize = new Size(452, 110);
+            ClientSize = new Size(369, 110);
             Controls.Add(label1);
             Controls.Add(button2);
-            Controls.Add(formattingLabel1);
-            Controls.Add(levelSuffix);
             Controls.Add(button1);
             Controls.Add(levelPrefix);
             Controls.Add(levelLabel);
@@ -222,7 +196,7 @@ namespace PvZU_Level_Maker
                 fbd.SelectedPath = levelsPath;
             }
             // Validate input fields
-            if (worldSelect.SelectedIndex <= -1 || string.IsNullOrEmpty(levelPrefix.Text) || string.IsNullOrEmpty(levelSuffix.Text))
+            if (worldSelect.SelectedIndex <= -1 || string.IsNullOrEmpty(levelPrefix.Text) )
             {
                 error.ForeColor = Color.Red;
                 error.Location = new Point(420, 35);
@@ -230,20 +204,12 @@ namespace PvZU_Level_Maker
                 return;
             }
 
-            var parts = LevelMaker.selected_level?.Split();
-            if (parts == null || parts.Length == 0 || !int.TryParse(parts[0], out int levelNum))
-            {
-                MessageBox.Show("Invalid level number.", "Error");
-                return;
-            }
-
             selected_world = (World)worldSelect.SelectedItem;
-            selected_level = $"{levelPrefix.Text} - {levelSuffix.Text}";
 
-            if (!int.TryParse(levelPrefix.Text, out pre_lvl) || !int.TryParse(levelSuffix.Text, out suf_lvl))
+            if (!int.TryParse(levelPrefix.Text, out pre_lvl))
             {
                 error.ForeColor = Color.Red;
-                error.Text = "Level numbers must be integers";
+                error.Text = "Level number must be integers";
                 return;
             }
 
@@ -265,7 +231,7 @@ namespace PvZU_Level_Maker
             {
                 Program.level = new Level()
                 {
-                    comment = $"{selected_world.world_id}{suf_lvl}",
+                    comment = $"{selected_world.world_id}{pre_lvl}",
                     objects = new List<GameObject>(),
                     version = 1
                 };
@@ -289,8 +255,6 @@ namespace PvZU_Level_Maker
         private TextBox levelPrefix;
         private BindingSource worldDeclareBindingSource;
         private Button button1;
-        private TextBox levelSuffix;
-        private Label formattingLabel1;
         private Button button2;
         private Label label1;
         private FolderBrowserDialog fbd;

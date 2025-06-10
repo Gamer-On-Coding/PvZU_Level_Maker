@@ -74,7 +74,7 @@ namespace PvZU_Level_Maker
                 levelDefinition.loot = loot.LootID;
                 levelDefinition.currencyAmount = coins;
                 levelDefinition.description = LevelMaker.selected_world.world_description;
-                levelDefinition.levelNumber = Int32.Parse(LevelMaker.selected_level.Split()[0]);
+                levelDefinition.levelNumber = LevelMaker.pre_lvl;
 
                 WaveManagerProperties waveManager = new()
                 {
