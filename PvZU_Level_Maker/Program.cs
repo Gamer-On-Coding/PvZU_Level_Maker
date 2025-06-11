@@ -13,7 +13,7 @@ namespace PvZU_Level_Maker
         ///  The main entry point 
         public static Level level = new();
         public static string filename;
-        public static string pathname;
+        public static string pathname = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         public static List<Plant> plants = [];
         public static List<ZombieObj> zombies = [];

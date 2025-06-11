@@ -14,8 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Configs\PLANTCONFIG.json" />
-    <Content Include="Configs\ZOMBIECONFIG.json" />
+    <Content Include="Configs\PLANTCONFIG.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\ZOMBIECONFIG.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

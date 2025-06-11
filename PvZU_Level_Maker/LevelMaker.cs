@@ -56,6 +56,7 @@ namespace PvZU_Level_Maker
             {
                 label1.Text = fbd.SelectedPath;
             }
+            Program.pathname = fbd.SelectedPath;
         }
     }
 }

@@ -188,13 +188,6 @@ namespace PvZU_Level_Maker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(fbd.SelectedPath))
-            {
-                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string levelsPath = Path.Combine(documentsPath, "levels");
-                Directory.CreateDirectory(levelsPath);
-                fbd.SelectedPath = levelsPath;
-            }
             // Validate input fields
             if (worldSelect.SelectedIndex <= -1 || string.IsNullOrEmpty(levelPrefix.Text) )
             {
@@ -214,7 +207,7 @@ namespace PvZU_Level_Maker
             }
 
             Program.filename = filename = $"{selected_world.world_id}{pre_lvl}.json";
-            Program.pathname = Path.Combine(fbd.SelectedPath, Program.filename);
+            Program.pathname += "\\" + Program.filename;
             // Load or create level
             if (File.Exists(Program.pathname))
             {
@@ -229,6 +222,7 @@ namespace PvZU_Level_Maker
             }
             else
             {
+                File.Create(Program.pathname);
                 Program.level = new Level()
                 {
                     comment = $"{selected_world.world_id}{pre_lvl}",
