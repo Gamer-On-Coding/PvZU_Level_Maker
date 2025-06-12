@@ -10,14 +10,14 @@
 
   <ItemGroup>
     <None Remove="Configs\PLANTCONFIG.json" />
-    <None Remove="Configs\ZOMBIECONFIG.json" />
+    <None Remove="Configs\ZOMBIETYPES.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Configs\PLANTCONFIG.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\ZOMBIECONFIG.json">
+    <Content Include="Configs\ZOMBIETYPES.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

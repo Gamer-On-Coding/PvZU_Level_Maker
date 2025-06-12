@@ -207,22 +207,30 @@ namespace PvZU_Level_Maker
             }
 
             Program.filename = filename = $"{selected_world.world_id}{pre_lvl}.json";
-            Program.pathname += "\\" + Program.filename;
+            Program.filepath = Program.pathname + "\\" + Program.filename;
             // Load or create level
-            if (File.Exists(Program.pathname))
+            if (File.Exists(Program.filepath))
             {
-                Program.level = Program.LoadLevel(Program.pathname);
+                Program.level = Program.LoadLevel(Program.filepath);
                 Program.loadingFile = true;
 
                 // Validate loaded level structure
-                if (Program.level.objects == null)
+                if (Program.level == null)
                 {
-                    Program.level.objects = new List<GameObject>();
+                    File.WriteAllText(Program.filepath, string.Empty);
+                    Program.level = new Level()
+                    {
+                        comment = $"{selected_world.world_id}{pre_lvl}",
+                        objects = new List<GameObject>(),
+                        version = 1
+                    };
+
+                    Program.AddBasicLevelDefinition(selected_world, pre_lvl, Program.level);
+                    Program.loadingFile = false;
                 }
             }
             else
             {
-                File.Create(Program.pathname);
                 Program.level = new Level()
                 {
                     comment = $"{selected_world.world_id}{pre_lvl}",

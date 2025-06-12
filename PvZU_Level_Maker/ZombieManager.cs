@@ -33,9 +33,9 @@ namespace PvZU_Level_Maker.PvZU_Level_Maker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboZombie.SelectedItem is ZombieObj selectedZombie)
+            if (comboZombie.SelectedItem is ZombieTypeWrapper selectedZombie)
             {
-                SelectedType = Program.GetRTIDFromSprite(selectedZombie.Sprite);
+                SelectedType = Program.GetRTIDFromSprite(selectedZombie.aliases[0]);
                 SelectedRow = (int)numericRow.Value;
                 DialogResult = DialogResult.OK;
             }

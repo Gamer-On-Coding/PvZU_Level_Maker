@@ -493,7 +493,7 @@ namespace PvZU_Level_Maker
             };
 
 
-            if (Program.loadingFile)
+            if (Program.loadingFile )
             {
                 LevelDefinition lD = (LevelDefinition)Program.level.objects[0].objdata;
                 List<string> modules = lD.modules;

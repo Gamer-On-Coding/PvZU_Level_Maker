@@ -11,12 +11,13 @@ namespace PvZU_Level_Maker
     {
         /// <summary>
         ///  The main entry point 
-        public static Level level = new();
+        public static Level level = new() { objects = new List<GameObject> { } };
         public static string filename;
         public static string pathname = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static string filepath;
 
         public static List<Plant> plants = [];
-        public static List<ZombieObj> zombies = [];
+        public static List<ZombieTypeWrapper> zombies = [];
 
         public static bool loadingFile = false;
 
@@ -47,7 +48,7 @@ namespace PvZU_Level_Maker
 
             level.objects.Add(LevelDefinition);
 
-            WriteToFile(filename);
+            WriteToFile(filepath);
         }
 
         public static void WriteToFile(string filename)
@@ -78,11 +79,11 @@ namespace PvZU_Level_Maker
         public static void ReadConfigs()
         {
             string plantstring = File.ReadAllText("Configs/PLANTCONFIG.json");
-            string zombiestring = File.ReadAllText("Configs/ZOMBIECONFIG.json");
+            string zombiestring = File.ReadAllText("Configs/ZOMBIETYPES.json");
 
             plants = JsonConvert.DeserializeObject<PlantConfig>(plantstring).objects;
 
-            zombies = JsonConvert.DeserializeObject<ZombieConfig>(zombiestring).objects;
+            zombies = JsonConvert.DeserializeObject<ZombieTypeRoot>(zombiestring).objects;
         }
         public static Level LoadLevel(string filename)
         {
@@ -111,8 +112,8 @@ namespace PvZU_Level_Maker
         }
         public static string GetRTIDFromSprite(string spriteName)
         {
-            var match = Program.zombies.FirstOrDefault(z => z.Sprite == spriteName);
-            return match != null ? $"RTID({match.Aliases}@ZombieTypes)" : spriteName;
+            var match = Program.zombies.FirstOrDefault(z => z.aliases[0] == spriteName);
+            return match != null ? $"RTID({match.aliases[0]}@ZombieTypes)" : spriteName;
         }
     }
 }

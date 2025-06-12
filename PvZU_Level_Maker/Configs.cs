@@ -28,32 +28,38 @@ namespace PvZU_Level_Maker
         public List<Plant> objects { get; set; }
     }
 
-    public class ZombieObj
+    public class ZombieTypeRoot
     {
-        public string Aliases { get; set; }
-        public string Object { get; set; }
-        public string Sprite { get; set; }
-        public string Parent { get; set; } // Optional, not present in all JSON objects
-        public string WorldType { get; set; }
-        public BasicAttributes Basic { get; set; }
+        public string comment { get; set; }
+        public int version { get; set; }
+        public List<ZombieTypeWrapper> objects { get; set; }
+    }
 
-        public class BasicAttributes
-        {
-            public int Health { get; set; }
-            public List<int> HealthDividing { get; set; } = [];
-            public int? Armor { get; set; } // Nullable to handle cases where armor is not present
-            public List<int> ArmorDividing { get; set; } = []; // Nullable to handle cases where armor dividing is not present
-            public int? ArmorType { get; set; } // Nullable to handle cases where armor type is not present
-            public float Speed { get; set; }
-        }
+    public class ZombieTypeWrapper
+    {
+        public string objclass { get; set; }
+        public List<string> aliases { get; set; }
+        public ZombieType objdata { get; set; }
 
         public override string ToString()
         {
-            return this.Sprite;
+            return objdata.Sprite;
         }
     }
-    public class ZombieConfig
+
+    public class ZombieType
     {
-        public List<ZombieObj> objects { get; set; }
+        public string Sprite { get; set; }
+        public string TypeName { get; set; }
+        public string ZombieClass { get; set; }
+        public string Properties { get; set; }
+        public string HomeWorld { get; set; }
+        public bool? IsBasicZombie { get; set; }
+        public string Parent { get; set; }
+        public string FlagType { get; set; }
+        public bool? Placeable { get; set; }
+        public int? SkillType { get; set; }
+        public bool? InLane { get; set; }
+        public bool? HastyOnStart { get; set; }
     }
 }

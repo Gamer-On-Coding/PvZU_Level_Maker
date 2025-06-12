@@ -1,0 +1,739 @@
+{
+	"#comment": "Make new zombie types here!",
+	"version": 1,
+    "objects":[
+        {
+            "#comment": "####### Tutorial Zombies #######",
+			"objclass": "ZombieType",
+            "aliases": [
+				"tutorial"
+			],
+            "objdata": {
+                "Sprite": "BasicZombie",
+                "TypeName": "tutorial",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieTutorialDefault@ZombieProperties)",
+				"HomeWorld": "modern",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"tutorial_armor1"
+			],
+            "objdata": {
+                "Sprite": "ConeheadZombie",
+                "TypeName": "tutorial_armor1",
+                "Parent": "BasicZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieTutorialArmor1Default@ZombieProperties)",
+				"HomeWorld": "modern",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"tutorial_armor2"
+			],
+            "objdata": {
+                "Sprite": "BucketheadZombie",
+                "TypeName": "tutorial_armor2",
+                "Parent": "BasicZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieTutorialArmor2Default@ZombieProperties)",
+				"HomeWorld": "modern",
+				"IsBasicZombie": true
+            }
+        },
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"tutorial_flag"
+			],
+			"objdata": {
+				"Sprite": "FlagZombie",
+				"TypeName": "tutorial_flag",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieTutorialFlagDefault@ZombieProperties)",
+				"HomeWorld": "modern",
+				"IsBasicZombie": true,
+				"FlagType": "flag_normal"
+			}
+		},
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mummy"
+			],
+            "objdata": {
+                "Sprite": "MummyZombie",
+                "TypeName": "mummy",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieMummyDefault@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mummy_armor1"
+			],
+            "objdata": {
+                "Sprite": "ConeheadMummy",
+                "TypeName": "mummy_armor1",
+                "Parent": "MummyZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieMummyArmor1Default@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mummy_armor2"
+			],
+            "objdata": {
+                "Sprite": "BucketheadMummy",
+                "TypeName": "mummy_armor2",
+                "Parent": "MummyZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieMummyArmor2Default@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mummy_armor4"
+			],
+            "objdata": {
+                "Sprite": "PyramidHeadZombie",
+                "TypeName": "mummy_armor4",
+                "Parent": "MummyZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieMummyArmor4Default@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"IsBasicZombie": true
+            }
+        },
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"ra"
+			],
+			"objdata": {
+				"Sprite": "Ra_Zombie",
+				"TypeName": "ra",
+				"ZombieClass": "ZombieRa",
+				"Properties": "RTID(ZombieRaDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mummy_flag"
+			],
+            "objdata": {
+                "Sprite": "Flag_Mummy_Zombie",
+                "TypeName": "mummy_flag",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieMummyFlagDefault@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"IsBasicZombie": true,
+                "FlagType": "flag_normal"
+            }
+        },
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"tomb_raiser"
+			],
+			"objdata": {
+				"Sprite": "tomb_raiser",
+				"TypeName": "tomb_raiser",
+				"ZombieClass": "ZombieTombRaiser",
+				"Properties": "RTID(ZombieTombRaiserDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"explorer"
+			],
+			"objdata": {
+				"Sprite": "explorer",
+				"TypeName": "explorer",
+				"ZombieClass": "ZombieExplorer",
+				"Properties": "RTID(ZombieExplorerDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pharaoh"
+			],
+			"objdata": {
+				"Sprite": "pharaoh",
+				"TypeName": "pharaoh",
+				"Parent": "pharaoh_body",
+				"ZombieClass": "ZombiePharaoh",
+				"Properties": "RTID(ZombiePharaohDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pharaoh_noarmor"
+			],
+			"objdata": {
+				"Sprite": "pharaoh_zombie",
+				"TypeName": "pharaoh",
+				"ZombieClass": "ZombiePharaoh",
+				"Properties": "RTID(ZombiePharaohDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"camel_almanac"
+			],
+			"objdata": {
+				"Sprite": "camel_a",
+				"Parent": "camel_zombie",
+				"TypeName": "camel_almanac",
+				"ZombieClass": "ZombieCamel",
+				"Properties": "RTID(ZombieCamelDefault@ZombieProperties)",
+				"Placeable": false,
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"camel_onehump"
+			],
+			"objdata": {
+				"TypeName": "camel_onehump",
+				"Sprite": "camel_a",
+				"Parent": "camel_zombie",
+				"ZombieClass": "ZombieCamel",
+				"Properties": "RTID(ZombieCamelDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"camel_twohump"
+			],
+			"objdata": {
+				"TypeName": "camel_twohump",
+				"Sprite": "camel_a",
+				"Parent": "camel_zombie",
+				"ZombieClass": "ZombieCamel",
+				"Properties": "RTID(ZombieCamelDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"camel_manyhump"
+			],
+			"objdata": {
+				"TypeName": "camel_manyhump",
+				"Sprite": "camel_a",
+				"Parent": "camel_zombie",
+				"ZombieClass": "ZombieCamel",
+				"Properties": "RTID(ZombieCamelDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"camel_segment"
+			],
+			"objdata": {
+				"TypeName": "camel_segment",
+				"Sprite": "camel_b",
+				"Parent": "camel_zombie",
+				"ZombieClass": "ZombieCamel",
+				"Properties": "RTID(ZombieCamelDefault@ZombieProperties)",
+				"Placeable": false,
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"egypt_gargantuar"
+			],
+			"objdata": {
+				"TypeName": "egypt_gargantuar",
+				"Sprite": "egypt_gargantuar",
+				"ZombieClass": "ZombieGargantuar",
+				"Properties": "RTID(ZombieEgyptGargantuar@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"egypt_imp"
+			],
+			"objdata": {
+				"Sprite": "egypt_imp",
+				"TypeName": "egypt_imp",
+				"ZombieClass": "ZombieImp",
+				"Properties": "RTID(ZombieEgyptImpDefault@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"Placeable": true
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"egypt_cleopatra"
+			],
+			"objdata": {
+				"Sprite": "egypt_cleopatra",
+				"TypeName": "egypt_cleopatra",
+				"ZombieClass": "ZombieCleopatra",
+				"Properties": "RTID(ZombieCleopatraDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"egypt_quicksand"
+			],
+			"objdata": {
+				"Sprite": "egypt_quicksand",
+				"TypeName": "egypt_quicksand",
+				"ZombieClass": "ZombieQuicksand",
+				"Properties": "RTID(ZombieQuicksandDefault@ZombieProperties)",
+				"HomeWorld": "egypt"
+			}
+		},
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum"
+			],
+            "objdata": {
+                "Sprite": "SergeantZombie",
+                "TypeName": "mausoleum",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieSergeantDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_armor1"
+			],
+            "objdata": {
+                "Sprite": "ConeheadSergeant",
+                "TypeName": "mausoleum_armor1",
+                "Parent": "SergeantZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieSergeantArmor1Default@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_armor2"
+			],
+            "objdata": {
+                "Sprite": "BucketheadSergeant",
+                "TypeName": "mausoleum_armor2",
+                "Parent": "SergeantZombie",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieSergeantArmor2Default@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+				"IsBasicZombie": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_flag"
+			],
+            "objdata": {
+                "Sprite": "FlagSergeantZombie",
+                "TypeName": "mausoleum_flag",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombieSergeantFlagDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+				"IsBasicZombie": true,
+                "FlagType": "flag_normal"
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_cavalry"
+			],
+            "objdata": {
+                "Sprite": "CavalryZombie",
+                "TypeName": "mausoleum_cavalry",
+				"ZombieClass": "ZombieCavalry",
+				"Properties": "RTID(ZombieCavalryDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+                "InLane": true
+            }
+        },
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_shield"
+			],
+            "objdata": {
+                "Sprite": "shield",
+                "TypeName": "mausoleum_shield",
+                "Parent": "shieldzombie",
+				"ZombieClass": "ZombieShield",
+				"Properties": "RTID(ZombieShieldDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum"
+            }
+        },
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_gargantuar"
+			],
+			"objdata": {
+                "Sprite": "mausoleum_gargantuar",
+				"TypeName": "mausoleum_gargantuar",
+				"ZombieClass": "ZombieGargantuar",
+				"Properties": "RTID(ZombieMausoleumGargantuar@ZombieProperties)",
+				"HomeWorld": "mausoleum"
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_imp"
+			],
+			"objdata": {
+                "Sprite": "warrior_imp",
+				"TypeName": "mausoleum_imp",
+				"ZombieClass": "ZombieImp",
+				"Properties": "RTID(ZombieWarriorImpDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+                "Placeable": true
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_piggyimp"
+			],
+			"objdata": {
+                "Sprite": "piggy_imp",
+				"TypeName": "mausoleum_piggyimp",
+				"ZombieClass": "ZombieImp",
+				"Properties": "RTID(ZombieWarriorImpDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+                "Placeable": true
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_archer"
+			],
+			"objdata": {
+                "Sprite": "archer",
+				"TypeName": "mausoleum_archer",
+				"ZombieClass": "ZombieArcher",
+				"Properties": "RTID(ZombieArcherDefault@ZombieProperties)",
+				"SkillType": 0,
+				"HomeWorld": "mausoleum"
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_archer2"
+			],
+			"objdata": {
+                "Sprite": "archer2",
+				"TypeName": "mausoleum_archer2",
+				"ZombieClass": "ZombieArcher",
+				"Properties": "RTID(ZombieArcherDefault@ZombieProperties)",
+				"SkillType": 1,
+				"HomeWorld": "mausoleum"
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_carthawker"
+			],
+			"objdata": {
+                "Sprite": "cart_hawker",
+				"TypeName": "mausoleum_carthawker",
+				"ZombieClass": "ZombieCartHawker",
+				"Properties": "RTID(ZombieCartHawkerDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+                "InLane": true
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_cart"
+			],
+			"objdata": {
+                "Sprite": "mausoleum_cart",
+				"TypeName": "mausoleum_cart",
+				"ZombieClass": "ZombieMausoleumCart",
+				"Properties": "RTID(ZombieMausoleumCartDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum"
+			}
+		},
+        {
+			"objclass": "ZombieType",
+			"aliases": [
+				"mausoleum_piggy"
+			],
+			"objdata": {
+                "Sprite": "piggy",
+				"TypeName": "mausoleum_piggy",
+				"ZombieClass": "ZombiePiggy",
+				"Properties": "RTID(ZombiePiggyDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+                "InLane": true
+			}
+		},
+        {
+            "objclass": "ZombieType",
+            "aliases": [
+				"mausoleum_drunk"
+			],
+            "objdata": {
+                "Sprite": "drunkzombie",
+                "TypeName": "mausoleum_drunk",
+				"ZombieClass": "ZombieDrunk",
+				"Properties": "RTID(ZombieDrunkDefault@ZombieProperties)",
+				"HomeWorld": "mausoleum"
+            }
+        },
+		{
+			"#comment": "####### Pirate Zombies #######",
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate"
+			],
+			"objdata": {
+				"Sprite": "pirate",
+				"TypeName": "pirate",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombiePirateDefault@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"IsBasicZombie": true
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_armor1"
+			],
+			"objdata": {
+				"Sprite": "pirate_armor1",
+				"Parent": "pirate",
+				"TypeName": "pirate_armor1",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombiePirateArmor1Default@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"IsBasicZombie": true
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_armor2"
+			],
+			"objdata": {
+				"Sprite": "pirate_armor2",
+				"Parent": "pirate",
+				"TypeName": "pirate_armor2",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombiePirateArmor2Default@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"IsBasicZombie": true
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_armor4"
+			],
+			"objdata": {
+				"Sprite": "pirate_armor4",
+				"Parent": "pirate",
+				"TypeName": "pirate_armor4",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombiePirateArmor4Default@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"IsBasicZombie": true
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_flag"
+			],
+			"objdata": {
+				"Sprite": "pirate_flag",
+				"TypeName": "pirate_flag",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(ZombiePirateFlagDefault@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"IsBasicZombie": true,
+				"FlagType": "flag_normal"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_imp"
+			],
+			"objdata": {
+				"Sprite": "pirate_imp",
+				"TypeName": "pirate_imp",
+				"ZombieClass": "ZombieImp",
+				"Properties": "RTID(ZombiePirateImpDefault@ZombieProperties)",
+				"Placeable": true,
+				"HomeWorld": "pirate"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"seagull"
+			],
+			"objdata": {
+				"Sprite": "seagull",
+				"TypeName": "seagull",
+				"ZombieClass": "ZombiePirateSeagull",
+				"Properties": "RTID(ZombiePirateSeagullDefault@ZombieProperties)",
+				"HomeWorld": "pirate"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"swashbuckler"
+			],
+			"objdata": {
+				"Sprite": "swashbuckler",
+				"TypeName": "swashbuckler",
+				"ZombieClass": "ZombieSwashbuckler",
+				"Properties": "RTID(ZombieSwashbucklerDefault@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"HastyOnStart": false
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_gargantuar"
+			],
+			"objdata": {
+				"Sprite": "pirate_gargantuar",
+				"TypeName": "pirate_gargantuar",
+				"ZombieClass": "ZombieGargantuar",
+				"Properties": "RTID(ZombiePirateGargantuar@ZombieProperties)",
+				"HomeWorld": "pirate"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"barrelroller"
+			],
+			"objdata": {
+				"Sprite": "barrelroller",
+				"TypeName": "barrelroller",
+				"ZombieClass": "ZombiePirateBarrelPusher",
+				"Properties": "RTID(ZombiePirateBarrelPusherDefault@ZombieProperties)",
+				"HomeWorld": "pirate"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"pirate_barrel"
+			],
+			"objdata": {
+				"Sprite": "pirate_barrel",
+				"TypeName": "pirate_barrel",
+				"ZombieClass": "ZombiePirateBarrel",
+				"Properties": "RTID(ZombiePirateBarrelDefault@ZombieProperties)",
+				"Placeable": false,
+				"HomeWorld": "pirate"
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"cannon"
+			],
+			"objdata": {
+				"Sprite": "cannon",
+				"TypeName": "cannon",
+				"ZombieClass": "ZombiePirateCannon",
+				"Properties": "RTID(ZombiePirateCannonDefault@ZombieProperties)",
+				"HomeWorld": "pirate",
+				"HastyOnStart": false
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"zombossmech_mausoleum"
+			],
+			"objdata": {
+				"Sprite": "zombossmech_mausoleum",
+				"TypeName": "zombossmech_mausoleum",
+				"ZombieClass": "ZombieZombossMech_Mausoleum",
+				"Properties": "RTID(ZombieZombossMechMausoleum@ZombieProperties)",
+				"HomeWorld": "mausoleum",
+				"Placeable": false
+			}
+		},
+		{
+			"objclass": "ZombieType",
+			"aliases": [
+				"zombossmech_egypt"
+			],
+			"objdata": {
+				"Sprite": "zombossmech_egypt",
+				"TypeName": "zombossmech_egypt",
+				"ZombieClass": "ZombieZombossMech_Egypt",
+				"Properties": "RTID(ZombieZombossMechEgypt@ZombieProperties)",
+				"HomeWorld": "egypt",
+				"Placeable": false
+			}
+		}
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "#comment": "PIRATE3",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "CurrencyAmount": 0,
+        "Description": "[PLAYERS_TRIP_TO_PIRATE_SEAS]",
+        "FirstIntroNarrative": null,
+        "FirstRewardParam": null,
+        "FirstRewardType": null,
+        "LevelNumber": 3,
+        "Loot": null,
+        "Modules": null,
+        "Name": null,
+        "NormalPresentTable": null,
+        "ShinyPresentTable": null,
+        "StageModule": null
+      }
+    }
+  ],
+  "version": 1
+}

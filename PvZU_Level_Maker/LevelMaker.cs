@@ -54,9 +54,9 @@ namespace PvZU_Level_Maker
             fbd.Description = "Select the folder where you want to save your level.";
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                label1.Text = fbd.SelectedPath;
+                label1.Text = fbd.SelectedPath + "\\";
             }
-            Program.pathname = fbd.SelectedPath;
+            Program.pathname = label1.Text;
         }
     }
 }

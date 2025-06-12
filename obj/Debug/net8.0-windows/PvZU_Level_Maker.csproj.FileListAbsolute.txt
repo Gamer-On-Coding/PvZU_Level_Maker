@@ -57,3 +57,5 @@ D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.pd
 D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.genruntimeconfig.cache
 D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\ref\PvZU_Level_Maker.dll
 D:\Github Projects\PvZU_Level_Maker\obj\Debug\net8.0-windows\PvZU_Level_Maker.PvZU_Level_Maker.ZombieManager.resources
+D:\Github Projects\PvZU_Level_Maker\bin\Debug\net8.0-windows\Configs\PLANTCONFIG.json
+D:\Github Projects\PvZU_Level_Maker\bin\Debug\net8.0-windows\Configs\ZOMBIETYPES.json
