@@ -400,7 +400,7 @@ namespace PvZU_Level_Maker
                 selectedTile = gridData[y, x];
                 selectedButton = btn;
 
-                labelGridCoords.Text = $"Selected: ({x}, {y})";
+                labelGridCoords.Text = $"Selected: ({x+1}, {y+1})";
 
                 checkedListBoxGridItems.ItemCheck -= CheckedListBoxGridItems_ItemCheck;
                 checkedListBoxRowItems.ItemCheck -= CheckedListBoxRowItems_ItemCheck;
@@ -412,12 +412,9 @@ namespace PvZU_Level_Maker
                         checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
                 }
 
-                for (int i = 0; i < checkedListBoxRowItems.Items.Count; i++)
-                {
-                    string item = checkedListBoxRowItems.Items[i].ToString();
-                    if (item == "PiratePlank Row")
-                        checkedListBoxRowItems.SetItemChecked(i, piratePlankRows.Contains(y));
-                }
+                checkedListBoxRowItems.ItemCheck -= CheckedListBoxRowItems_ItemCheck;
+                checkedListBoxRowItems.SetItemChecked(0, piratePlankRows.Contains(y));
+                checkedListBoxRowItems.ItemCheck += CheckedListBoxRowItems_ItemCheck;
 
                 checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
                 checkedListBoxRowItems.ItemCheck += CheckedListBoxRowItems_ItemCheck;
@@ -429,18 +426,18 @@ namespace PvZU_Level_Maker
             if (selectedTile == null)
                 return;
 
-            BeginInvoke((MethodInvoker)delegate
+            int row = selectedTile.GridY;
+
+            BeginInvoke(() =>
             {
-                string item = checkedListBoxRowItems.Items[e.Index].ToString();
+                if (e.NewValue == CheckState.Checked)
+                    piratePlankRows.Add(row);
+                else
+                    piratePlankRows.Remove(row);
 
-                if (item == "PiratePlank Row")
+                for (int x = 0; x < gridData.GetLength(1); x++)
                 {
-                    int row = GetSelectedTileRow();
-
-                    if (e.NewValue == CheckState.Checked)
-                        piratePlankRows.Add(row);
-                    else
-                        piratePlankRows.Remove(row);
+                    UpdateTileIcon(tileButtons[row, x], gridData[row, x]);
                 }
             });
         }
@@ -476,11 +473,18 @@ namespace PvZU_Level_Maker
         private void UpdateTileIcon(Button btn, GridTile tile)
         {
             string icon = "";
+
+            // Show plank if this row is a pirate plank row and in the right columns
+            if (piratePlankRows.Contains(tile.GridY) && tile.GridX >= cols - 4)
+                icon += "🪵";
+
             if (tile.ObjectTypes.Contains(TileObjectType.Gravestone))
                 icon += "🪦";
             if (tile.ObjectTypes.Contains(TileObjectType.SandSlide))
                 icon += "🟫";
 
+            // Set emoji-supporting font
+            btn.Font = new Font("Segoe UI Emoji", btn.Font.Size, btn.Font.Style);
             btn.Text = icon;
         }
 
@@ -565,5 +569,6 @@ namespace PvZU_Level_Maker
         {
             return y >= 0 && y < gridData.GetLength(0) && x >= 0 && x < gridData.GetLength(1);
         }
+
     }
 }

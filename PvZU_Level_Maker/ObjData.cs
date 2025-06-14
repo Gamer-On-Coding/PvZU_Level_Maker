@@ -126,11 +126,10 @@ namespace PvZU_Level_Maker
 
     public class GridTile
     {
-        public int GridX;
-        public int GridY;
-        public HashSet<TileObjectType> ObjectTypes = new();
+        public int GridX { get; set; }
+        public int GridY { get; set; }
+        public HashSet<TileObjectType> ObjectTypes { get; set; } = new();
     }
-
 
     public class GravestoneProperties : ObjData
     {

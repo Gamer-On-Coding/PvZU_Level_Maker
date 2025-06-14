@@ -469,9 +469,9 @@ namespace PvZU_Level_Maker
             labelGridCoords.AutoSize = true;
             labelGridCoords.Location = new Point(486, 73);
             labelGridCoords.Name = "labelGridCoords";
-            labelGridCoords.Size = new Size(161, 15);
+            labelGridCoords.Size = new Size(71, 15);
             labelGridCoords.TabIndex = 4;
-            labelGridCoords.Text = "implement selected grid here";
+            labelGridCoords.Text = "not selected";
             // 
             // label10
             // 
@@ -631,6 +631,22 @@ namespace PvZU_Level_Maker
                     comboBox3.SelectedItem = LevelMaker.loot.FirstOrDefault(p => p.LootID == lD.loot);
                 }
                 numericUpDown1.Value = lD.currencyAmount;
+
+                var obj = Program.level.objects.FirstOrDefault(x => x.objclass == "PiratePlankProperties");
+                if (obj?.objdata is PiratePlankProperties props)
+                {
+                    piratePlankRows = new HashSet<int>(props.PlankRows);
+                    if (piratePlankRows != null)
+                    {
+                        foreach (int row in piratePlankRows)
+                        {
+                            for (int x = 0; x < gridData.GetLength(1); x++)
+                            {
+                                UpdateTileIcon(tileButtons[row, x], gridData[row, x]);
+                            }
+                        }
+                    }
+                }
 
                 // Load waves from file
                 waves = Program.level.objects
