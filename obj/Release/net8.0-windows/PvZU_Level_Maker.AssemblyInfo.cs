@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PvZU_Level_Maker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c8865aab6fb03fb7e80e1ff3963e1f1a6662211")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b051cb3acf79cfb837a2a6b655924ec6f94f2784")]
 [assembly: System.Reflection.AssemblyProductAttribute("PvZU_Level_Maker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PvZU_Level_Maker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
