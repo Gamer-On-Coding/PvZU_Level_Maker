@@ -116,6 +116,7 @@ namespace PvZU_Level_Maker
         public string waveManagerProps { get; set; }
     }
 
+<<<<<<< HEAD
     #region Grid Item Classes
     public enum TileObjectType
     {
@@ -163,9 +164,11 @@ namespace PvZU_Level_Maker
 
     #endregion
 
+=======
+>>>>>>> parent of d230381 (implemented grid tile tab)
     public class ObjDataConverter : JsonConverter
     {
-        private static readonly Dictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase)
+        private static readonly Dictionary<string, Type> _typeMap = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
         {
             ["LevelDefinition"] = typeof(LevelDefinition),
             ["MausoleumLaneProperties"] = typeof(MausoleumLaneProperties),
@@ -173,44 +176,99 @@ namespace PvZU_Level_Maker
             ["SpawnZombiesJitteredWaveActionProps"] = typeof(SpawnZombiesJitteredWaveActionProps),
             ["SpawnModernPortalsWaveActionProps"] = typeof(SpawnModernPortalsWaveActionProps),
             ["WaveManagerModuleProperties"] = typeof(WaveManagerModuleProperties),
+<<<<<<< HEAD
             ["SeedBankProperties"] = typeof(SeedBankProperties),
             ["PiratePlankProperties"] = typeof(PiratePlankProperties),
             ["GravestoneProperties"] = typeof(GravestoneProperties),
             ["SandSlideProperties"] = typeof(SandSlideProperties)
+=======
+            ["SeedBankProperties"] = typeof(SeedBankProperties)
+>>>>>>> parent of d230381 (implemented grid tile tab)
         };
 
-        public override bool CanConvert(Type objectType) => objectType == typeof(GameObject);
+        public override bool CanConvert(Type objectType)
+        {
+            return typeof(ObjData).IsAssignableFrom(objectType);
+        }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             JObject jo = JObject.Load(reader);
-            string objclass = jo["objclass"]?.ToString();
-            JToken objdataToken = jo["objdata"];
 
-            ObjData objdata = null;
-            if (!string.IsNullOrEmpty(objclass) && ObjDataConverter._typeMap.TryGetValue(objclass, out var type))
+            // Create a new serializer without this converter to prevent recursion
+            var newSerializer = new JsonSerializer();
+            foreach (var converter in serializer.Converters.Where(c => !(c is ObjDataConverter)))
             {
-                objdata = (ObjData)objdataToken.ToObject(type, serializer);
+                newSerializer.Converters.Add(converter);
             }
 
-            return new GameObject
+            // Copy other settings
+            newSerializer.NullValueHandling = serializer.NullValueHandling;
+            newSerializer.MissingMemberHandling = serializer.MissingMemberHandling;
+            Console.WriteLine("Parsing object: " + jo.ToString());
+
+            // Try to use objclass if present
+            if (jo["objclass"] != null)
             {
-                aliases = jo["aliases"]?.ToObject<List<string>>(serializer),
-                objclass = objclass,
-                objdata = objdata
-            };
+                string objclass = jo["objclass"].Value<string>();
+                Console.WriteLine("Detected objclass: " + objclass);
+                if (_typeMap.TryGetValue(objclass, out Type concreteType))
+                {
+                    return jo.ToObject(concreteType, newSerializer);
+                }
+            }
+
+            // Try to infer type by matching known property sets
+            foreach (var kvp in _typeMap)
+            {
+                var type = kvp.Value;
+                var props = type.GetProperties().Select(p =>
+                {
+                    var attr = p.GetCustomAttributes(typeof(JsonPropertyAttribute), true)
+                                .Cast<JsonPropertyAttribute>().FirstOrDefault();
+                    return attr?.PropertyName ?? p.Name;
+                }).ToList();
+
+                if (props.All(pn => jo[pn] != null))
+                {
+                    return jo.ToObject(type, newSerializer);
+                }
+            }
+
+            // Fallback for partial matches (at least one property matches)
+            foreach (var kvp in _typeMap)
+            {
+                var type = kvp.Value;
+                var props = type.GetProperties().Select(p =>
+                {
+                    var attr = p.GetCustomAttributes(typeof(JsonPropertyAttribute), true)
+                                .Cast<JsonPropertyAttribute>().FirstOrDefault();
+                    return attr?.PropertyName ?? p.Name;
+                }).ToList();
+
+                if (props.Any(pn => jo[pn] != null))
+                {
+                    return jo.ToObject(type, newSerializer);
+                }
+            }
+
+            // If still unknown, log all keys for debugging
+            var keys = string.Join(", ", jo.Properties().Select(p => p.Name));
+            Console.WriteLine($"Unknown JSON object with keys: {keys}");
+
+            throw new JsonSerializationException($"Cannot determine ObjData type. JSON keys: {keys}");
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var go = (GameObject)value;
-            var jo = new JObject
+            // Create a new serializer without this converter
+            var newSerializer = new JsonSerializer();
+            foreach (var converter in serializer.Converters.Where(c => !(c is ObjDataConverter)))
             {
-                ["aliases"] = go.aliases != null ? JToken.FromObject(go.aliases, serializer) : null,
-                ["objclass"] = go.objclass,
-                ["objdata"] = go.objdata != null ? JToken.FromObject(go.objdata, serializer) : null
-            };
-            jo.WriteTo(writer);
+                newSerializer.Converters.Add(converter);
+            }
+
+            newSerializer.Serialize(writer, value);
         }
     }
 }

@@ -87,16 +87,16 @@ namespace PvZU_Level_Maker
         }
         public static Level LoadLevel(string filename)
         {
-            var settings = new JsonSerializerSettings
-            {
-                MissingMemberHandling = MissingMemberHandling.Ignore,
-                NullValueHandling = NullValueHandling.Ignore,
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                Converters = { new ObjDataConverter() } // <-- Add this line
-            };
+                var settings = new JsonSerializerSettings
+                {
+                    Converters = { new ObjDataConverter() },
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                };
 
-            string json = File.ReadAllText(filename);
-            return JsonConvert.DeserializeObject<Level>(json, settings);
+                string json = File.ReadAllText(filename);
+                return JsonConvert.DeserializeObject<Level>(json, settings);
         }
         public static class JsonExtensions
         {

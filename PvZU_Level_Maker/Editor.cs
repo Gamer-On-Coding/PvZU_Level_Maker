@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PvZU_Level_Maker.ObjDataConverter;
 
 namespace PvZU_Level_Maker
 {
@@ -20,6 +19,7 @@ namespace PvZU_Level_Maker
         private List<Plant> filteredPlants = new();
         private HashSet<string> selectedBlacklist = new();
 
+<<<<<<< HEAD
         private const int rows = 5;
         private const int cols = 9;
         private Button[,] tileButtons = new Button[rows, cols];
@@ -27,6 +27,8 @@ namespace PvZU_Level_Maker
         private GridTile selectedTile = null;
         private Button selectedButton = null;
         private HashSet<int> piratePlankRows = new();
+=======
+>>>>>>> parent of d230381 (implemented grid tile tab)
 
         public Editor()
         {
@@ -88,6 +90,7 @@ namespace PvZU_Level_Maker
                 levelDefinition.description = LevelMaker.selected_world.world_description;
                 levelDefinition.levelNumber = LevelMaker.pre_lvl;
 
+<<<<<<< HEAD
                 // Gravestones
                 var gravestones = GetGravestones();
                 if (gravestones.Count > 0)
@@ -157,6 +160,8 @@ namespace PvZU_Level_Maker
                         Program.level.objects.Add(plankObj);
                 }
 
+=======
+>>>>>>> parent of d230381 (implemented grid tile tab)
                 GameObject seedBankObj = new()
                 {
                     aliases = new List<string> { "SeedBankProps" },
@@ -220,6 +225,7 @@ namespace PvZU_Level_Maker
 
                     Program.level.objects.Add(waveObject);
                 }
+
 
                 Program.WriteToFile(Program.filepath);
                 //Saved
@@ -406,6 +412,7 @@ namespace PvZU_Level_Maker
             ControlPaint.DrawBorder(e.Graphics, zombieLaneTable.ClientRectangle,
                 Color.Gray, ButtonBorderStyle.Solid);
         }
+<<<<<<< HEAD
 
         private void TileButton_Click(object sender, EventArgs e)
         {
@@ -589,5 +596,7 @@ namespace PvZU_Level_Maker
         {
             return y >= 0 && y < gridData.GetLength(0) && x >= 0 && x < gridData.GetLength(1);
         }
+=======
+>>>>>>> parent of d230381 (implemented grid tile tab)
     }
 }
