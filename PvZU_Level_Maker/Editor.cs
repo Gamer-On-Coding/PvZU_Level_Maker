@@ -27,6 +27,7 @@ namespace PvZU_Level_Maker
         private GridTile selectedTile = null;
         private Button selectedButton = null;
 
+        private HashSet<int> piratePlankRows = new();
         public Editor()
         {
             InitializeComponent();
@@ -123,6 +124,21 @@ namespace PvZU_Level_Maker
                         Program.level.objects.Add(sandObj);
                 }
 
+                if (piratePlankRows.Count > 0)
+                {
+                    GameObject piratePlanksObj = new()
+                    {
+                        aliases = new List<string> { "PiratePlanks" },
+                        objclass = "PiratePlankProperties",
+                        objdata = new PiratePlankProperties { PlankRows = piratePlankRows.ToList() }
+                    };
+
+                    int i = Program.level.objects.FindIndex(x => x.objclass == "PiratePlankProperties");
+                    if (i >= 0)
+                        Program.level.objects[i] = piratePlanksObj;
+                    else
+                        Program.level.objects.Add(piratePlanksObj);
+                }
 
                 GameObject seedBankObj = new()
                 {
@@ -387,16 +403,56 @@ namespace PvZU_Level_Maker
                 labelGridCoords.Text = $"Selected: ({x}, {y})";
 
                 checkedListBoxGridItems.ItemCheck -= CheckedListBoxGridItems_ItemCheck;
+                checkedListBoxRowItems.ItemCheck -= CheckedListBoxRowItems_ItemCheck;
 
                 for (int i = 0; i < checkedListBoxGridItems.Items.Count; i++)
                 {
                     string item = checkedListBoxGridItems.Items[i].ToString();
-                    TileObjectType type = Enum.Parse<TileObjectType>(item);
-                    checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
+                    if (Enum.TryParse<TileObjectType>(item, out var type))
+                        checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
+                }
+
+                for (int i = 0; i < checkedListBoxRowItems.Items.Count; i++)
+                {
+                    string item = checkedListBoxRowItems.Items[i].ToString();
+                    if (item == "PiratePlank Row")
+                        checkedListBoxRowItems.SetItemChecked(i, piratePlankRows.Contains(y));
                 }
 
                 checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
+                checkedListBoxRowItems.ItemCheck += CheckedListBoxRowItems_ItemCheck;
             }
+        }
+
+        private void CheckedListBoxRowItems_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (selectedTile == null)
+                return;
+
+            BeginInvoke((MethodInvoker)delegate
+            {
+                string item = checkedListBoxRowItems.Items[e.Index].ToString();
+
+                if (item == "PiratePlank Row")
+                {
+                    int row = GetSelectedTileRow();
+
+                    if (e.NewValue == CheckState.Checked)
+                        piratePlankRows.Add(row);
+                    else
+                        piratePlankRows.Remove(row);
+                }
+            });
+        }
+
+        private int GetSelectedTileRow()
+        {
+            for (int y = 0; y < gridData.GetLength(0); y++)
+                for (int x = 0; x < gridData.GetLength(1); x++)
+                    if (gridData[y, x] == selectedTile)
+                        return y;
+
+            return -1;
         }
 
         private void CheckedListBoxGridItems_ItemCheck(object sender, ItemCheckEventArgs e)

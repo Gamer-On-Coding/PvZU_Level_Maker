@@ -157,6 +157,19 @@ namespace PvZU_Level_Maker
 
     #endregion
 
+    #region Row Item Classes
+    public enum RowObjectType
+    {
+        PiratePlankRow
+    }
+
+    public class PiratePlankProperties : ObjData
+    {
+        [JsonProperty("PlankRows")]
+        public List<int> PlankRows { get; set; } = new();
+    }
+    #endregion
+
     public class ObjDataConverter : JsonConverter
     {
         private static readonly Dictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase)
@@ -168,6 +181,7 @@ namespace PvZU_Level_Maker
             ["SpawnModernPortalsWaveActionProps"] = typeof(SpawnModernPortalsWaveActionProps),
             ["WaveManagerModuleProperties"] = typeof(WaveManagerModuleProperties),
             ["SeedBankProperties"] = typeof(SeedBankProperties),
+            ["PiratePlankProperties"] = typeof(PiratePlankProperties),
             ["GravestoneProperties"] = typeof(GravestoneProperties),
             ["SandSlideProperties"] = typeof(SandSlideProperties)
         };

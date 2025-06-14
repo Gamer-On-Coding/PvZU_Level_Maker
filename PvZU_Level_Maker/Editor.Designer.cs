@@ -71,6 +71,8 @@ namespace PvZU_Level_Maker
             addWaveButton = new Button();
             waveListBox = new ListBox();
             tabPage4 = new TabPage();
+            label11 = new Label();
+            checkedListBoxRowItems = new CheckedListBox();
             labelGridCoords = new Label();
             label10 = new Label();
             label8 = new Label();
@@ -430,6 +432,8 @@ namespace PvZU_Level_Maker
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(label11);
+            tabPage4.Controls.Add(checkedListBoxRowItems);
             tabPage4.Controls.Add(labelGridCoords);
             tabPage4.Controls.Add(label10);
             tabPage4.Controls.Add(label8);
@@ -442,6 +446,23 @@ namespace PvZU_Level_Maker
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Grid Items";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(486, 229);
+            label11.Name = "label11";
+            label11.Size = new Size(62, 15);
+            label11.TabIndex = 6;
+            label11.Text = "Row Items";
+            // 
+            // checkedListBoxRowItems
+            // 
+            checkedListBoxRowItems.FormattingEnabled = true;
+            checkedListBoxRowItems.Location = new Point(486, 247);
+            checkedListBoxRowItems.Name = "checkedListBoxRowItems";
+            checkedListBoxRowItems.Size = new Size(158, 112);
+            checkedListBoxRowItems.TabIndex = 5;
             // 
             // labelGridCoords
             // 
@@ -464,7 +485,7 @@ namespace PvZU_Level_Maker
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(486, 105);
+            label8.Location = new Point(486, 92);
             label8.Name = "label8";
             label8.Size = new Size(61, 15);
             label8.TabIndex = 2;
@@ -473,9 +494,9 @@ namespace PvZU_Level_Maker
             // checkedListBoxGridItems
             // 
             checkedListBoxGridItems.FormattingEnabled = true;
-            checkedListBoxGridItems.Location = new Point(486, 123);
+            checkedListBoxGridItems.Location = new Point(486, 110);
             checkedListBoxGridItems.Name = "checkedListBoxGridItems";
-            checkedListBoxGridItems.Size = new Size(158, 148);
+            checkedListBoxGridItems.Size = new Size(158, 112);
             checkedListBoxGridItems.TabIndex = 1;
             // 
             // tileGridTable
@@ -552,6 +573,7 @@ namespace PvZU_Level_Maker
             InitializeTileGrid();
             LoadGridTileObjects();
 
+            checkedListBoxRowItems.Items.Add("PiratePlank Row");
 
             checkedListBoxGridItems.Items.Clear();
             checkedListBoxGridItems.Items.Add("Gravestone");
@@ -791,5 +813,7 @@ namespace PvZU_Level_Maker
         private Label labelGridCoords;
         private Label label10;
         private Label label8;
+        private Label label11;
+        private CheckedListBox checkedListBoxRowItems;
     }
 }
