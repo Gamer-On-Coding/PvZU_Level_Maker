@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PvZU_Level_Maker.ObjDataConverter;
 
 namespace PvZU_Level_Maker
 {
@@ -19,6 +20,12 @@ namespace PvZU_Level_Maker
         private List<Plant> filteredPlants = new();
         private HashSet<string> selectedBlacklist = new();
 
+        private const int rows = 5;
+        private const int cols = 9;
+        private Button[,] tileButtons = new Button[rows, cols];
+        private GridTile[,] gridData = new GridTile[rows, cols];
+        private GridTile selectedTile = null;
+        private Button selectedButton = null;
 
         public Editor()
         {
@@ -79,6 +86,43 @@ namespace PvZU_Level_Maker
                 levelDefinition.currencyAmount = coins;
                 levelDefinition.description = LevelMaker.selected_world.world_description;
                 levelDefinition.levelNumber = LevelMaker.pre_lvl;
+
+                // Gravestones
+                var gravestones = GetGravestones();
+                if (gravestones.Count > 0)
+                {
+                    var gravestoneObj = new GameObject
+                    {
+                        aliases = new List<string> { "Gravestones" },
+                        objclass = "GravestoneProperties",
+                        objdata = new GravestoneProperties { ForceSpawnData = gravestones }
+                    };
+
+                    int i = Program.level.objects.FindIndex(x => x.objclass == "GravestoneProperties");
+                    if (i >= 0)
+                        Program.level.objects[i] = gravestoneObj;
+                    else
+                        Program.level.objects.Add(gravestoneObj);
+                }
+
+                // Sand Slides
+                var sandSlides = GetSandSlides();
+                if (sandSlides.Count > 0)
+                {
+                    var sandObj = new GameObject
+                    {
+                        aliases = new List<string> { "SandSlides" },
+                        objclass = "SandSlideProperties",
+                        objdata = new SandSlideProperties { ForceSpawnData = sandSlides }
+                    };
+
+                    int j = Program.level.objects.FindIndex(x => x.objclass == "SandSlideProperties");
+                    if (j >= 0)
+                        Program.level.objects[j] = sandObj;
+                    else
+                        Program.level.objects.Add(sandObj);
+                }
+
 
                 GameObject seedBankObj = new()
                 {
@@ -143,7 +187,6 @@ namespace PvZU_Level_Maker
 
                     Program.level.objects.Add(waveObject);
                 }
-
 
                 Program.WriteToFile(Program.filepath);
                 //Saved
@@ -329,6 +372,142 @@ namespace PvZU_Level_Maker
         {
             ControlPaint.DrawBorder(e.Graphics, zombieLaneTable.ClientRectangle,
                 Color.Gray, ButtonBorderStyle.Solid);
+        }
+
+        private void TileButton_Click(object sender, EventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is ValueTuple<int, int> coords)
+            {
+                int x = coords.Item1;
+                int y = coords.Item2;
+
+                selectedTile = gridData[y, x];
+                selectedButton = btn;
+
+                labelGridCoords.Text = $"Selected: ({x}, {y})";
+
+                checkedListBoxGridItems.ItemCheck -= CheckedListBoxGridItems_ItemCheck;
+
+                for (int i = 0; i < checkedListBoxGridItems.Items.Count; i++)
+                {
+                    string item = checkedListBoxGridItems.Items[i].ToString();
+                    TileObjectType type = Enum.Parse<TileObjectType>(item);
+                    checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
+                }
+
+                checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
+            }
+        }
+
+        private void CheckedListBoxGridItems_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (selectedTile == null || selectedButton == null)
+                return;
+
+            BeginInvoke((MethodInvoker)delegate
+            {
+                string item = checkedListBoxGridItems.Items[e.Index].ToString();
+                TileObjectType type = Enum.Parse<TileObjectType>(item);
+
+                if (e.NewValue == CheckState.Checked)
+                    selectedTile.ObjectTypes.Add(type);
+                else
+                    selectedTile.ObjectTypes.Remove(type);
+
+                UpdateTileIcon(selectedButton, selectedTile);
+            });
+        }
+        private void UpdateTileIcon(Button btn, GridTile tile)
+        {
+            string icon = "";
+            if (tile.ObjectTypes.Contains(TileObjectType.Gravestone))
+                icon += "🪦";
+            if (tile.ObjectTypes.Contains(TileObjectType.SandSlide))
+                icon += "🟫";
+
+            btn.Text = icon;
+        }
+
+        private List<GravestoneForceSpawnData> GetGravestones()
+        {
+            var list = new List<GravestoneForceSpawnData>();
+            foreach (var tile in gridData)
+            {
+                if (tile.ObjectTypes.Contains(TileObjectType.Gravestone))
+                {
+                    list.Add(new GravestoneForceSpawnData
+                    {
+                        GridX = tile.GridX,
+                        GridY = tile.GridY
+                    });
+                }
+            }
+            return list;
+        }
+
+        private List<SandSlideForceSpawnData> GetSandSlides()
+        {
+            var list = new List<SandSlideForceSpawnData>();
+            foreach (var tile in gridData)
+            {
+                if (tile.ObjectTypes.Contains(TileObjectType.SandSlide))
+                {
+                    list.Add(new SandSlideForceSpawnData
+                    {
+                        GridX = tile.GridX,
+                        GridY = tile.GridY
+                    });
+                }
+            }
+            return list;
+        }
+
+        private void LoadGridTileObjects()
+        {
+            foreach (GridTile tile in gridData)
+                tile.ObjectTypes.Clear();
+
+            foreach (Button btn in tileButtons)
+                btn.Text = "";
+
+            // Gravestones
+            var gravestoneObj = Program.level.objects
+                .FirstOrDefault(o => o.objclass == "GravestoneProperties")?
+                .objdata as GravestoneProperties;
+
+            if (gravestoneObj != null)
+            {
+                foreach (var data in gravestoneObj.ForceSpawnData)
+                {
+                    if (IsInBounds(data.GridX, data.GridY))
+                    {
+                        gridData[data.GridY, data.GridX].ObjectTypes.Add(TileObjectType.Gravestone);
+                        UpdateTileIcon(tileButtons[data.GridY, data.GridX], gridData[data.GridY, data.GridX]);
+                    }
+                }
+            }
+
+            // SandSlides
+            var sandObj = Program.level.objects
+                .FirstOrDefault(o => o.objclass == "SandSlideProperties")?
+                .objdata as SandSlideProperties;
+
+            if (sandObj != null)
+            {
+                foreach (var data in sandObj.ForceSpawnData)
+                {
+                    if (IsInBounds(data.GridX, data.GridY))
+                    {
+                        gridData[data.GridY, data.GridX].ObjectTypes.Add(TileObjectType.SandSlide);
+                        UpdateTileIcon(tileButtons[data.GridY, data.GridX], gridData[data.GridY, data.GridX]);
+                    }
+                }
+            }
+        }
+
+        private bool IsInBounds(int x, int y)
+        {
+            return y >= 0 && y < gridData.GetLength(0) && x >= 0 && x < gridData.GetLength(1);
         }
     }
 }
