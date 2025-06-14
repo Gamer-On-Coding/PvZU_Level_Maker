@@ -61,6 +61,7 @@ namespace PvZU_Level_Maker
     }
     #endregion
 
+    #region misc
     public class SpawnEffect
     {
         public string name;
@@ -84,6 +85,7 @@ namespace PvZU_Level_Maker
 
         public override string ToString() => name;
     }
+    #endregion
 
     #region json structure
     public class Level
@@ -94,6 +96,8 @@ namespace PvZU_Level_Maker
         public List<GameObject> objects = [];
         public int version = 1;
     }
+
+    [Newtonsoft.Json.JsonConverter(typeof(ObjDataConverter))]
     public class GameObject
     {
         [JsonProperty("aliases")]
@@ -103,7 +107,6 @@ namespace PvZU_Level_Maker
         public string objclass { get; set; }
 
         [JsonProperty("objdata")]
-        [Newtonsoft.Json.JsonConverter(typeof(ObjDataConverter))]
         public ObjData objdata { get; set; }
     }
 
@@ -171,4 +174,6 @@ namespace PvZU_Level_Maker
         public int y { get; set; }
     }
     #endregion
+
+    
 }

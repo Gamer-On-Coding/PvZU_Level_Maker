@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using static PvZU_Level_Maker.ObjDataConverter;
 
 namespace PvZU_Level_Maker
 {
@@ -69,6 +70,12 @@ namespace PvZU_Level_Maker
             removeWaveButton = new Button();
             addWaveButton = new Button();
             waveListBox = new ListBox();
+            tabPage4 = new TabPage();
+            labelGridCoords = new Label();
+            label10 = new Label();
+            label8 = new Label();
+            checkedListBoxGridItems = new CheckedListBox();
+            tileGridTable = new TableLayoutPanel();
             button1 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -77,6 +84,7 @@ namespace PvZU_Level_Maker
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             zombieLaneTable.SuspendLayout();
+            tabPage4.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -84,6 +92,7 @@ namespace PvZU_Level_Maker
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
@@ -419,6 +428,81 @@ namespace PvZU_Level_Maker
             waveListBox.TabIndex = 0;
             waveListBox.SelectedIndexChanged += waveListBox_SelectedIndexChanged;
             // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(labelGridCoords);
+            tabPage4.Controls.Add(label10);
+            tabPage4.Controls.Add(label8);
+            tabPage4.Controls.Add(checkedListBoxGridItems);
+            tabPage4.Controls.Add(tileGridTable);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(650, 398);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Grid Items";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // labelGridCoords
+            // 
+            labelGridCoords.AutoSize = true;
+            labelGridCoords.Location = new Point(486, 73);
+            labelGridCoords.Name = "labelGridCoords";
+            labelGridCoords.Size = new Size(161, 15);
+            labelGridCoords.TabIndex = 4;
+            labelGridCoords.Text = "implement selected grid here";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(486, 58);
+            label10.Name = "label10";
+            label10.Size = new Size(79, 15);
+            label10.TabIndex = 3;
+            label10.Text = "Selected Grid:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(486, 105);
+            label8.Name = "label8";
+            label8.Size = new Size(61, 15);
+            label8.TabIndex = 2;
+            label8.Text = "Grid Items";
+            // 
+            // checkedListBoxGridItems
+            // 
+            checkedListBoxGridItems.FormattingEnabled = true;
+            checkedListBoxGridItems.Location = new Point(486, 123);
+            checkedListBoxGridItems.Name = "checkedListBoxGridItems";
+            checkedListBoxGridItems.Size = new Size(158, 148);
+            checkedListBoxGridItems.TabIndex = 1;
+            // 
+            // tileGridTable
+            // 
+            tileGridTable.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tileGridTable.ColumnCount = 9;
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1111107F));
+            tileGridTable.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tileGridTable.Location = new Point(6, 35);
+            tileGridTable.Name = "tileGridTable";
+            tileGridTable.RowCount = 5;
+            tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tileGridTable.Size = new Size(464, 336);
+            tileGridTable.TabIndex = 0;
+            // 
             // button1
             // 
             button1.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -452,6 +536,8 @@ namespace PvZU_Level_Maker
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             zombieLaneTable.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -463,7 +549,6 @@ namespace PvZU_Level_Maker
             comboBox3.Items.AddRange(LevelMaker.loot);
             comboBox4.Items.AddRange(LevelMaker.seedSelectionMethods);
 
-<<<<<<< HEAD
             InitializeTileGrid();
             LoadGridTileObjects();
 
@@ -474,8 +559,6 @@ namespace PvZU_Level_Maker
             checkedListBoxGridItems.Items.Add("Pirate Plank");
             checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
 
-=======
->>>>>>> parent of d230381 (implemented grid tile tab)
             waves = new List<SpawnZombiesJitteredWaveActionProps>();
 
             filteredPlants = new(Program.plants);
@@ -640,6 +723,57 @@ namespace PvZU_Level_Maker
                 waveListBox.SelectedIndex = 0;
         }
 
+        private void InitializeTileGrid()
+        {
+            const int rows = 5;
+            const int cols = 9;
+
+            tileGridTable.Controls.Clear();
+            tileGridTable.ColumnCount = cols;
+            tileGridTable.RowCount = rows;
+            tileGridTable.ColumnStyles.Clear();
+            tileGridTable.RowStyles.Clear();
+
+            // Fill the table with equal-sized rows and columns
+            for (int i = 0; i < cols; i++)
+                tileGridTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / cols));
+
+            for (int i = 0; i < rows; i++)
+                tileGridTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / rows));
+
+            // Reset arrays
+            tileButtons = new Button[rows, cols];
+            gridData = new GridTile[rows, cols];
+
+            for (int y = 0; y < rows; y++)
+            {
+                for (int x = 0; x < cols; x++)
+                {
+                    Button btn = new Button
+                    {
+                        Dock = DockStyle.Fill,
+                        Margin = new Padding(0),
+                        Tag = (x, y),
+                        Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                        BackColor = Color.White,
+                        Text = ""
+                    };
+
+                    btn.Click += TileButton_Click;
+
+                    tileButtons[y, x] = btn;
+                    gridData[y, x] = new GridTile
+                    {
+                        GridX = x,
+                        GridY = y,
+                        ObjectTypes = new HashSet<TileObjectType>()
+                    };
+
+                    tileGridTable.Controls.Add(btn, x, y);
+                }
+            }
+        }
+
         private TableLayoutPanel zombieLaneTable;
         private FlowLayoutPanel Lane1;
         private FlowLayoutPanel Lane2;
@@ -651,5 +785,11 @@ namespace PvZU_Level_Maker
         private NumericUpDown numericUpDown2;
         private TableLayoutPanel plantTable;
         private TextBox plantSearchBox;
+        private TabPage tabPage4;
+        private TableLayoutPanel tileGridTable;
+        private CheckedListBox checkedListBoxGridItems;
+        private Label labelGridCoords;
+        private Label label10;
+        private Label label8;
     }
 }
