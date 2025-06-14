@@ -155,6 +155,12 @@ namespace PvZU_Level_Maker
         public int GridY { get; set; }
     }
 
+    public class PiratePlankProperties : ObjData
+    {
+        [JsonProperty("PlankRows")]
+        public List<int> PlankRows { get; set; }
+    }
+
     #endregion
 
     public class ObjDataConverter : JsonConverter
@@ -168,6 +174,7 @@ namespace PvZU_Level_Maker
             ["SpawnModernPortalsWaveActionProps"] = typeof(SpawnModernPortalsWaveActionProps),
             ["WaveManagerModuleProperties"] = typeof(WaveManagerModuleProperties),
             ["SeedBankProperties"] = typeof(SeedBankProperties),
+            ["PiratePlankProperties"] = typeof(PiratePlankProperties),
             ["GravestoneProperties"] = typeof(GravestoneProperties),
             ["SandSlideProperties"] = typeof(SandSlideProperties)
         };

@@ -556,7 +556,7 @@ namespace PvZU_Level_Maker
             checkedListBoxGridItems.Items.Clear();
             checkedListBoxGridItems.Items.Add("Gravestone");
             checkedListBoxGridItems.Items.Add("SandSlide");
-            checkedListBoxGridItems.CheckOnClick = true;
+            checkedListBoxGridItems.Items.Add("Pirate Plank");
             checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
 
             waves = new List<SpawnZombiesJitteredWaveActionProps>();

@@ -26,6 +26,7 @@ namespace PvZU_Level_Maker
         private GridTile[,] gridData = new GridTile[rows, cols];
         private GridTile selectedTile = null;
         private Button selectedButton = null;
+        private HashSet<int> piratePlankRows = new();
 
         public Editor()
         {
@@ -123,6 +124,38 @@ namespace PvZU_Level_Maker
                         Program.level.objects.Add(sandObj);
                 }
 
+                List<int> selectedPlankRows = new();
+
+                for (int y = 0; y < 5; y++)
+                {
+                    bool fullRow = true;
+                    for (int x = 0; x < 9; x++)
+                    {
+                        if (tileButtons[x, y].BackColor != Color.SaddleBrown)
+                        {
+                            fullRow = false;
+                            break;
+                        }
+                    }
+                    if (fullRow)
+                        selectedPlankRows.Add(y);
+                }
+
+                if (selectedPlankRows.Count > 0)
+                {
+                    var plankObj = new GameObject
+                    {
+                        aliases = new List<string> { "PiratePlanks" },
+                        objclass = "PiratePlankProperties",
+                        objdata = new PiratePlankProperties { PlankRows = selectedPlankRows }
+                    };
+
+                    int pIndex = Program.level.objects.FindIndex(x => x.objclass == "PiratePlankProperties");
+                    if (pIndex >= 0)
+                        Program.level.objects[pIndex] = plankObj;
+                    else
+                        Program.level.objects.Add(plankObj);
+                }
 
                 GameObject seedBankObj = new()
                 {
@@ -391,13 +424,25 @@ namespace PvZU_Level_Maker
                 for (int i = 0; i < checkedListBoxGridItems.Items.Count; i++)
                 {
                     string item = checkedListBoxGridItems.Items[i].ToString();
-                    TileObjectType type = Enum.Parse<TileObjectType>(item);
-                    checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
+
+                    if (item == "PiratePlank Row")
+                    {
+                        // Check if current row has a plank
+                        checkedListBoxGridItems.SetItemChecked(i, piratePlankRows.Contains(y));
+                    }
+                    else
+                    {
+                        if (Enum.TryParse<TileObjectType>(item, out var type))
+                        {
+                            checkedListBoxGridItems.SetItemChecked(i, selectedTile.ObjectTypes.Contains(type));
+                        }
+                    }
                 }
 
                 checkedListBoxGridItems.ItemCheck += CheckedListBoxGridItems_ItemCheck;
             }
         }
+
 
         private void CheckedListBoxGridItems_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -407,16 +452,37 @@ namespace PvZU_Level_Maker
             BeginInvoke((MethodInvoker)delegate
             {
                 string item = checkedListBoxGridItems.Items[e.Index].ToString();
-                TileObjectType type = Enum.Parse<TileObjectType>(item);
 
-                if (e.NewValue == CheckState.Checked)
-                    selectedTile.ObjectTypes.Add(type);
+                if (item == "Pirate Plank Row")
+                {
+                    int row = selectedTile.GridY;
+                    if (e.NewValue == CheckState.Checked)
+                        piratePlankRows.Add(row);
+                    else
+                        piratePlankRows.Remove(row);
+
+                    // Update plank row UI immediately
+                    for (int x = 0; x < cols; x++)
+                    {
+                        tileButtons[x, row].BackColor = piratePlankRows.Contains(row) ? Color.SaddleBrown : SystemColors.Control;
+                    }
+                }
                 else
-                    selectedTile.ObjectTypes.Remove(type);
+                {
+                    // Normal tile-based object (Gravestone, SandSlide)
+                    if (Enum.TryParse<TileObjectType>(item, out var type))
+                    {
+                        if (e.NewValue == CheckState.Checked)
+                            selectedTile.ObjectTypes.Add(type);
+                        else
+                            selectedTile.ObjectTypes.Remove(type);
+                    }
+                }
 
-                UpdateTileIcon(selectedButton, selectedTile);
+                UpdateTileIcon(selectedButton, selectedTile); // optional: updates icon visuals
             });
         }
+
         private void UpdateTileIcon(Button btn, GridTile tile)
         {
             string icon = "";
@@ -503,6 +569,20 @@ namespace PvZU_Level_Maker
                     }
                 }
             }
+
+            // Load Pirate Planks
+            var plankObj = Program.level.objects.FirstOrDefault(x => x.objclass == "PiratePlankProperties");
+            if (plankObj?.objdata is PiratePlankProperties plankData)
+            {
+                foreach (int row in plankData.PlankRows)
+                {
+                    for (int x = 9; x > 5; x--)
+                    {
+                        tileButtons[x, row].BackColor = Color.SaddleBrown; // use a plank-like color
+                    }
+                }
+            }
+
         }
 
         private bool IsInBounds(int x, int y)
