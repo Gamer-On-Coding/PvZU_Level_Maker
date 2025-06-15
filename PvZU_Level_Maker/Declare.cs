@@ -39,6 +39,7 @@
         public static readonly StageModule ModernStage = new() { name = "Modern Stage", id = "RTID(ModernStage@LevelModules)" };
         public static readonly StageModule MausoleumStage = new() { name = "Mausoleum Stage", id = "RTID((MausoleumStage@LevelModules)" };
         public static readonly StageModule NightStage = new() { name = "Night Stage", id = "RTID(NightStage@LevelModules)" };
+        public static readonly StageModule PirateStage = new() { name = "Pirate Stage", id = "RTID(PirateStage@LevelModules)" };
         #endregion
 
         #region First Reward Type Declaration
